@@ -1,0 +1,23 @@
+{{ $page := .Page }}
+{{ $pages := .Pages }}
+{{ range $pages }}
+<article class="quote-card">
+    <a href="{{ .RelPermalink }}">
+        <div class="quote-card__content">
+            {{ .Title }}
+        </div>
+
+        {{ with .Params.author }}
+        <div class="quote-card__author">
+            — {{ . }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.source }}
+        <div class="quote-card__source">
+            {{ . }}
+        </div>
+        {{ end }}
+    </a>
+</article>
+{{ end }}

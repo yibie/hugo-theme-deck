@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63385&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts - My New Hugo Site</title>
+<meta name="description"
+    content="">
+
+
+<meta property="og:title"
+    content="Posts - My New Hugo Site">
+<meta property="og:description"
+    content="">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:63385/posts/">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+    content="Posts - My New Hugo Site">
+<meta name="twitter:description"
+    content="">
+
+
+
+<link rel="canonical" href="http://localhost:63385/posts/">
+
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
+
+<script>
+    
+    (function () {
+        const theme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+
+
+
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:63385/posts/feed.xml" title="My New Hugo Site" />
+
+</head>
+
+<body>
+  
+  <header class="mobile-header">
+    <h1 class="mobile-header__title">My New Hugo Site</h1>
+  </header>
+
+  
+  <header class="site-header">
+    <header class="site-header">
+    <div class="header-content">
+        
+        <div class="site-branding">
+            <h1 class="site-title">
+                <a href="http://localhost:63385/">My New Hugo Site</a>
+            </h1>
+            
+            <p class="site-subtitle">Your Subtitle</p>
+            
+        </div>
+
+        
+        <div class="site-bio">
+            
+            <div class="bio-content">Your bio text here. You can use <strong>markdown</strong> formatting.</div>
+            
+        </div>
+
+        
+        <nav class="site-nav">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/posts">Posts</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/tags">Tags</a>
+                </li>
+                
+                
+                <li class="menu-item">
+                    <a href="/feed.xml">Rss</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        
+        <div class="theme-toggle">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle__icon">🌓</span>
+            </button>
+        </div>
+
+        
+        <div class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="copyright">© 2025 Your Name</p>
+                    <p class="powered-by">Powered by <a href="https://gohugo.io" target="_blank">Hugo</a></p>
+                    <p class="theme-info">Theme <a href="https://github.com/yibie/hugo-theme-deck"
+                            target="_blank">Deck</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+
+        
+        themeToggle.addEventListener('click', function () {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        prefersDark.addListener((e) => {
+            if (!localStorage.getItem('theme')) {
+                const systemTheme = e.matches ? 'dark' : 'light';
+                html.setAttribute('data-theme', systemTheme);
+                localStorage.setItem('theme', systemTheme);
+            }
+        });
+    });
+</script>
+  </header>
+
+  <main>
+    
+<div class="list-container">
+  <header class="list-header">
+    <h1 class="list-title">Posts</h1>
+    
+  </header>
+
+  <p>Tempor est exercitation ad qui pariatur quis adipisicing aliquip nisi ea consequat ipsum occaecat. Nostrud consequat ullamco laboris fugiat esse esse adipisicing velit laborum ipsum incididunt ut enim. Dolor pariatur nulla quis fugiat dolore excepteur. Aliquip ad quis aliqua enim do consequat.</p>
+
+
+  <div class="post-list">
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-03-14">
+          Mar 14, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">quotes</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/quote-example/">The best way to predict the future is to invent it</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Additional context or notes about this quote can be added here, but won&rsquo;t be displayed in the quote column.</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-03-14">
+          Mar 14, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">read</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/read-example/">The Pragmatic Programmer</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>A comprehensive review of this programming classic&hellip;</p>
+<p><img src="pragmatic-programmer.jpg" alt="Book Cover"></p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-03-14">
+          Mar 14, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">til</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/til-example/">TIL: Hugo&#39;s Page Resources</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Today I learned that Hugo&rsquo;s Page Resources feature allows you to co-locate images and other assets with your content files.</p>
+<p>This makes it easier to organize and maintain your content, as all related files are kept together.</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-03-14">
+          Mar 14, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">now</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/now-example/">Working on improving the Hugo Theme Deck</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Working on improving the Hugo Theme Deck documentation and adding more example posts to demonstrate different column styles. 🚀</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-03-14">
+          Mar 14, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">write</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/write-example/">Write Column Example</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>This is a summary paragraph that will be shown in the write column card. It should be concise and informative, giving readers a quick overview of the article.</p>
+<h2 id="markdown-features">Markdown Features</h2>
+<p>Here&rsquo;s a demonstration of various markdown features that work in the single post view:</p>
+<h3 id="text-formatting">Text Formatting</h3>
+<ul>
+<li><strong>Bold text</strong> for emphasis</li>
+<li><em>Italic text</em> for subtle emphasis</li>
+<li><code>Inline code</code> for technical terms</li>
+</ul>
+<h3 id="code-blocks">Code Blocks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello_world</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span></code></pre></div><h3 id="lists-and-quotes">Lists and Quotes</h3>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<blockquote>
+<p>This is a blockquote that shows how quotes look in the article.</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2024-01-04">
+          Jan 4, 2024
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">quotes</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/example-quote/">生活不是等待暴风雨过去，而是学会在雨中跳舞</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>生活不是等待暴风雨过去，而是学会在雨中跳舞。</p>
+<p>测试</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2023-03-15">
+          Mar 15, 2023
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">now</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/post-3/">Go to Brayce Canyon National Park</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2023-03-15">
+          Mar 15, 2023
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">read</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/post-4/">Post 4</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.</p>
+      </div>
+    </article>
+    
+    <article class="post-item">
+      <div class="post-meta">
+        <time datetime=" 2023-03-15">
+          Mar 15, 2023
+        </time>
+        
+        <div class="post-categories">
+          
+          <span class="category">write</span>
+          
+        </div>
+        
+      </div>
+
+      <h2 class="post-title">
+        <a href="/posts/post-5/">Post 5</a>
+      </h2>
+
+      <div class="post-summary">
+        <p>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.</p>
+      </div>
+    </article>
+    
+  </div>
+</div>
+
+  </main>
+</body>
+
+</html>

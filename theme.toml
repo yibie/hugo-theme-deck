@@ -1,0 +1,28 @@
+name = "Hugo Theme Deck"
+license = "MIT"
+licenselink = "https://github.com/yourname/hugo-theme-deck/blob/master/LICENSE"
+description = "A card-based theme for Hugo with multiple columns layout"
+homepage = "https://github.com/yourname/hugo-theme-deck"
+tags = ["blog", "responsive", "minimal", "cards", "columns"]
+features = ["responsive", "card layout", "columns"]
+min_version = "0.116.0"
+
+# If you have a running demo of the theme
+demosite = 'https://owner.github.io/repo'
+
+# If the theme has multiple authors
+authors = [
+  {name = 'Name of author', homepage = 'Website of author'},
+  {name = 'Name of author', homepage = 'Website of author'}
+]
+
+# If the theme has a single author
+[author]
+  name = "Your Name"
+  homepage = "https://yourwebsite.com"
+
+# If porting an existing theme
+[original]
+  author = 'Name of original author'
+  homepage = 'Website of original author'
+  repo = 'https://github.com/owner/repo'

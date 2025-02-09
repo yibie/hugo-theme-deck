@@ -1,0 +1,34 @@
+{{ $page := .Page }}
+{{ $pages := .Pages }}
+{{ range $pages }}
+<article class="now-card{{ with .Params.type }} now-card--{{ . }}{{ end }}">
+    <time class="now-card__time" datetime="{{ .Date.Format " 2006-01-02" }}">
+        {{ .Date.Format "Jan 2" }}
+    </time>
+
+    <div class="now-card__content">
+        <h3 class="now-card__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+
+        {{ if .Resources }}
+        {{ $images := .Resources.Match "*.{jpg,jpeg,png,gif}" }}
+        {{ if $images }}
+        {{ range first 1 $images }}
+        <div class="now-card__image">
+            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{ with .Params.tags }}
+        <div class="now-card__tags">
+            {{ range . }}
+            <span class="now-card__tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

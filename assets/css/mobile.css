@@ -1,0 +1,151 @@
+/* 移动端基础样式 */
+@media screen and (max-width: 768px) {
+
+    /* 重置根变量 */
+    :root {
+        --header-width: 0;
+        --column-width: 100vw;
+        --spacing-unit: 1rem;
+        --content-padding-top: 1rem;
+        --content-side-padding: 1rem;
+    }
+
+    /* 移动端标题栏 */
+    .mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3.5rem;
+        padding: 0 1rem;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-header__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    /* 主内容区域 */
+    main {
+        margin-left: 0 !important;
+        padding-top: 3.5rem;
+        /* 为固定标题栏留出空间 */
+    }
+
+    /* 隐藏桌面端侧边栏 */
+    .site-header {
+        display: none !important;
+        width: 0;
+    }
+
+    /* 容器布局 */
+    .deck-container {
+        margin-left: 0 !important;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        background: var(--color-bg);
+    }
+
+    /* 滚动区域 */
+    .deck-scroll {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        padding: 0;
+        gap: 0;
+    }
+
+    /* 列样式 */
+    .deck-column {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        flex: 0 0 100vw;
+        scroll-snap-align: start;
+        border-right: 1px solid var(--color-border);
+        height: calc(100vh - 3.5rem);
+        /* 减去标题栏高度 */
+        overflow-y: auto;
+    }
+
+    /* 滚动条样式优化 */
+    .deck-column::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .deck-column::-webkit-scrollbar-track {
+        background: var(--color-gray);
+    }
+
+    .deck-column::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
+        border-radius: 2px;
+    }
+
+    /* 滑动指示器 */
+    .scroll-indicator {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--color-primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 1000;
+        animation: fadeInOut 2s infinite;
+    }
+
+    /* 滑动指示器动画 */
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0.4;
+        }
+
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    /* 暗色主题适配 */
+    :root[data-theme="dark"] .mobile-header {
+        background: var(--color-bg);
+        border-bottom-color: var(--color-border);
+    }
+
+    /* 超小屏幕优化 */
+    @media screen and (max-width: 480px) {
+        .mobile-header {
+            height: 3rem;
+        }
+
+        .mobile-header__title {
+            font-size: 1.125rem;
+        }
+
+        main {
+            padding-top: 3rem;
+        }
+
+        .deck-column {
+            height: calc(100vh - 3rem);
+        }
+    }
+}

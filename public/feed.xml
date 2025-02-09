@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home - My New Hugo Site</title>
+    <link>http://localhost:63385/</link>
+    <description>My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    
+    <lastBuildDate>Sun, 01 Jan 2023 08:00:00 -0700</lastBuildDate>
+    
+    <atom:link href="http://localhost:63385/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The best way to predict the future is to invent it</title>
+      <link>http://localhost:63385/posts/quote-example/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/quote-example/</guid>
+      <description>&lt;p&gt;Additional context or notes about this quote can be added here, but won&amp;rsquo;t be displayed in the quote column.&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>quotes</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>The Pragmatic Programmer</title>
+      <link>http://localhost:63385/posts/read-example/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/read-example/</guid>
+      <description>&lt;p&gt;A comprehensive review of this programming classic&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;pragmatic-programmer.jpg&#34; alt=&#34;Book Cover&#34;&gt;&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>read</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>TIL: Hugo&#39;s Page Resources</title>
+      <link>http://localhost:63385/posts/til-example/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/til-example/</guid>
+      <description>&lt;p&gt;Today I learned that Hugo&amp;rsquo;s Page Resources feature allows you to co-locate images and other assets with your content files.&lt;/p&gt;
+&lt;p&gt;This makes it easier to organize and maintain your content, as all related files are kept together.&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>til</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Working on improving the Hugo Theme Deck</title>
+      <link>http://localhost:63385/posts/now-example/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/now-example/</guid>
+      <description>&lt;p&gt;Working on improving the Hugo Theme Deck documentation and adding more example posts to demonstrate different column styles. 🚀&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>now</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Write Column Example</title>
+      <link>http://localhost:63385/posts/write-example/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/write-example/</guid>
+      <description>&lt;p&gt;This is a summary paragraph that will be shown in the write column card. It should be concise and informative, giving readers a quick overview of the article.&lt;/p&gt;
+&lt;h2 id=&#34;markdown-features&#34;&gt;Markdown Features&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s a demonstration of various markdown features that work in the single post view:&lt;/p&gt;
+&lt;h3 id=&#34;text-formatting&#34;&gt;Text Formatting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bold text&lt;/strong&gt; for emphasis&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Italic text&lt;/em&gt; for subtle emphasis&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Inline code&lt;/code&gt; for technical terms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;code-blocks&#34;&gt;Code Blocks&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hello_world&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lists-and-quotes&#34;&gt;Lists and Quotes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote that shows how quotes look in the article.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+      
+      
+      <category>write</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>生活不是等待暴风雨过去，而是学会在雨中跳舞</title>
+      <link>http://localhost:63385/posts/example-quote/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:63385/posts/example-quote/</guid>
+      <description>&lt;p&gt;生活不是等待暴风雨过去，而是学会在雨中跳舞。&lt;/p&gt;
+&lt;p&gt;测试&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>quotes</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Go to Brayce Canyon National Park</title>
+      <link>http://localhost:63385/posts/post-3/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:63385/posts/post-3/</guid>
+      <description>&lt;p&gt;Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;bryce-canyon.jpg&#34; alt=&#34;Bryce Canyon National Park&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sit excepteur do velit veniam mollit in nostrud laboris incididunt ea. Amet eu cillum ut reprehenderit culpa aliquip labore laborum amet sit sit duis. Laborum id proident nostrud dolore laborum reprehenderit quis mollit nulla amet veniam officia id id. Aliquip in deserunt qui magna duis qui pariatur officia sunt deserunt.&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>now</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Post 4</title>
+      <link>http://localhost:63385/posts/post-4/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:63385/posts/post-4/</guid>
+      <description>&lt;p&gt;Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;bryce-canyon.jpg&#34; alt=&#34;Bryce Canyon National Park&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sit excepteur do velit veniam mollit in nostrud laboris incididunt ea. Amet eu cillum ut reprehenderit culpa aliquip labore laborum amet sit sit duis. Laborum id proident nostrud dolore laborum reprehenderit quis mollit nulla amet veniam officia id id. Aliquip in deserunt qui magna duis qui pariatur officia sunt deserunt.&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>read</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Post 5</title>
+      <link>http://localhost:63385/posts/post-5/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:63385/posts/post-5/</guid>
+      <description>&lt;p&gt;Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;bryce-canyon.jpg&#34; alt=&#34;Bryce Canyon National Park&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sit excepteur do velit veniam mollit in nostrud laboris incididunt ea. Amet eu cillum ut reprehenderit culpa aliquip labore laborum amet sit sit duis. Laborum id proident nostrud dolore laborum reprehenderit quis mollit nulla amet veniam officia id id. Aliquip in deserunt qui magna duis qui pariatur officia sunt deserunt.&lt;/p&gt;
+
+      </description>
+      
+      
+      <category>write</category>
+      
+      
+    </item>
+    
+  </channel>
+</rss> 

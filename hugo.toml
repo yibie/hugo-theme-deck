@@ -1,0 +1,69 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'hugo-theme-deck'
+
+[params]
+  author = "Your Name"
+  subtitle = "Your Subtitle"
+  bio = """
+Your bio text here. You can use **markdown** formatting.
+"""
+  
+  # Columns Configuration
+  [params.sections]
+    columns = [
+      { id = "now", title = "Now", category = "now", style = "now-column" },
+      { id = "write", title = "Writing", category = "write", style = "write-column" },
+      { id = "quote", title = "Quotes", category = "quotes", style = "quote-column" },
+      { id = "read", title = "Reading", category = "read", style = "read-column" },
+      { id = "til", title = "TIL", category = "til", style = "write-column" }
+    ]
+
+# Main Menu Configuration
+# [[menu.main]]
+# name = "About"
+# url = "/about/"
+# weight = 10
+
+# [[menu.main]]
+# name = "Friends"
+# url = "/friends/"
+# weight = 20
+
+# [[menu.main]]
+# name = "Projects"
+# url = "/projects/"
+# weight = 30
+
+[[menu.main]]
+name = "Rss"
+url = "/feed.xml"
+weight = 40
+
+# SEO related
+description = "Your site description here"
+images = ["/images/default-og-image.jpg"]  # 默认 Open Graph 图片
+
+# Social media Card
+[params.social]
+  twitter = "yourusername"
+
+# RSS Configuration
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "feed"
+
+[services.rss]
+  limit = 20  # 限制 RSS 输出的文章数量
+
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"

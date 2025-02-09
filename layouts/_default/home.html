@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="deck-container">
+  <div class="deck-scroll">
+    {{ range .Site.Params.sections.columns }}
+    {{ partial "column/base.html" . }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

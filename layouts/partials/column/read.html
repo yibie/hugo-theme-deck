@@ -1,0 +1,36 @@
+{{ $page := .Page }}
+{{ $pages := .Pages }}
+<ul class="read-grid">
+    {{ $sortedPages := $pages.ByDate.Reverse }}
+    {{ range first 2 $sortedPages }}
+    <li class="read-item">
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="read-link">
+            {{/* 1. 优先使用指定的封面图 */}}
+            {{ if .Params.cover }}
+            <img src="{{ .Params.cover | absURL }}" alt="{{ .Title }}" class="read-cover">
+            {{/* 2. 其次尝试使用文章资源中的第一张图片 */}}
+            {{ else if .Resources }}
+            {{ $images := .Resources.Match "*.{jpg,jpeg,png,gif}" }}
+            {{ if $images }}
+            {{ range first 1 $images }}
+            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="read-cover">
+            {{ end }}
+            {{ end }}
+            {{/* 3. 最后尝试从文章内容中提取第一张图片 */}}
+            {{ else }}
+            {{ $content := .Content }}
+            {{ $imgRegex := `<img[^>]+src="([^"]+)"` }}
+                {{ if findRE $imgRegex $content 1 }}
+                {{ $firstImage := index (findRE $imgRegex $content 1) 0 }}
+                {{ $imageSrc := replaceRE $imgRegex "$1" $firstImage }}
+                <img src="{{ $imageSrc }}" alt="{{ .Title }}" class="read-cover">
+                {{ else }}
+                {{/* 如果没有任何图片，显示渐变背景 */}}
+                <div class="read-cover read-cover--gradient"></div>
+                {{ end }}
+                {{ end }}
+                <span class="read-title">{{ .Title }}</span>
+        </a>
+    </li>
+    {{ end }}
+</ul>

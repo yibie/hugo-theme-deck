@@ -1,0 +1,48 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Hugo Theme Deck'
+theme = 'hugo-theme-deck'
+
+[params]
+  author = "Demo User"
+  subtitle = "A clean and modern Hugo theme"
+  bio = """
+This is a demo site for the Hugo Theme Deck. 
+You can use **markdown** formatting in your bio.
+"""
+  
+  # Columns Configuration
+  [params.sections]
+    columns = [
+      { id = "now", title = "Now", category = "now", style = "now-column" },
+      { id = "write", title = "Writing", category = "write", style = "write-column" },
+      { id = "quote", title = "Quotes", category = "quotes", style = "quote-column" },
+      { id = "read", title = "Reading", category = "read", style = "read-column" },
+      { id = "til", title = "TIL", category = "til", style = "write-column" }
+    ]
+
+[[menu.main]]
+name = "Rss"
+url = "/feed.xml"
+weight = 40
+
+# SEO related
+description = "Hugo Theme Deck - A clean and modern Hugo theme for personal websites"
+images = ["/images/default-og-image.jpg"]
+
+# Social media Card
+[params.social]
+  twitter = "example"
+
+# RSS Configuration
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "feed"
+
+[services.rss]
+  limit = 20 

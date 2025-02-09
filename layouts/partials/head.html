@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+<meta name="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+
+<!-- Open Graph -->
+<meta property="og:title"
+    content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+<meta property="og:description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.cover }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+    content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+{{ with .Params.cover }}
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{ end }}
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+
+<!-- 主题初始化脚本 - 必须放在最前面 -->
+<script>
+    // 立即检查并应用主题
+    (function () {
+        const theme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+
+<!-- 其他 head 内容 -->
+{{ $style := resources.Get "css/main.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- RSS Feed -->
+{{ range .AlternativeOutputFormats -}}
+{{ printf `
+<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}

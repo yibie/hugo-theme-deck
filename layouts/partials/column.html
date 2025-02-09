@@ -1,0 +1,9 @@
+<article class="column-base {{ .Params.style }}" data-custom-css="{{ .Params.custom_css }}">
+  <header class="column-header">
+    <h2>{{ .Title }}</h2>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+  </header>
+  <div class="column-content">
+    {{ .Content }}
+  </div>
+</article>

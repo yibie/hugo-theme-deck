@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+
+<head>
+  {{ partial "head.html" . }}
+  {{ $style := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ $mobile := resources.Get "css/mobile.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $mobile.RelPermalink }}">
+</head>
+
+<body>
+  {{ partial "header/mobile.html" . }}
+  {{ partial "header/desktop.html" . }}
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{/* 移动端滑动指示器 */}}
+  {{ partial "mobile/scroll-indicator.html" . }}
+</body>
+
+</html>

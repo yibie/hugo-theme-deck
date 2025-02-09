@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="deck-container">
+    {{ if not .Site.Params.sections.columns }}
+    <div class="debug-info">
+        <p>No columns configuration found in Site Params</p>
+        <p>Site Params: {{ printf "%#v" .Site.Params }}</p>
+    </div>
+    {{ end }}
+
+    <div class="deck-scroll">
+        {{ range .Site.Params.sections.columns }}
+        <section class="deck-column">
+            <header class="deck-column__header">
+                <h2>{{ .title }}</h2>
+            </header>
+
+            <div class="deck-column__content">
+                {{ $category := .category }}
+                {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category) }}
+                {{/* <div class="debug-info">
+                    <p>Category: {{ $category }}</p>
+                    <p>Found pages: {{ len $pages }}</p>
+                    {{ range $pages }}
+                    <p>- {{ .Title }} (categories: {{ .Params.categories }})</p>
+                    {{ end }}
+                </div> */}}
+                {{ if not $pages }}
+                <p class="debug-info">No pages found for category: {{ $category }}</p>
+                {{ end }}
+
+                {{ if eq .style "quote-column" }}
+                {{ partial "column/quote.html" (dict "Page" $ "Pages" $pages) }}
+                {{ else if eq .style "write-column" }}
+                {{ partial "column/write.html" (dict "Page" $ "Pages" $pages) }}
+                {{ else if eq .style "now-column" }}
+                {{ partial "column/now.html" (dict "Page" $ "Pages" $pages) }}
+                {{ else if eq .style "read-column" }}
+                {{ partial "column/read.html" (dict "Page" $ "Pages" $pages) }}
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</div>
+
+<style>
+    .debug-info {
+        padding: 1rem;
+        background: #fff3cd;
+        border: 1px solid #ffeeba;
+        margin: 1rem;
+        border-radius: 4px;
+    }
+</style>
+{{ end }}

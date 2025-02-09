@@ -1,0 +1,24 @@
+{{/* 写作列模板 */}}
+<div class="deck-column write-column">
+    <h2>{{ .Page.Site.Params.sections.write.title | default "Writing" }}</h2>
+
+    <div class="deck-column__content">
+        {{ range .Pages }}
+        <article class="write-card">
+            <h3 class="write-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Summary }}
+            <div class="write-card__summary">
+                {{ $summary := . | plainify }}
+                {{ if $summary }}
+                {{ if gt (len $summary) 120 }}
+                {{ substr $summary 0 120 }}...
+                {{ else }}
+                {{ $summary }}
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+</div>
