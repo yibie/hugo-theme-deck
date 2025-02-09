@@ -4,7 +4,7 @@
 
     <div class="deck-column__content">
         {{ range .Pages }}
-        <article class="write-card">
+        <article class="deck-card write-card">
             <h3 class="write-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
             {{ with .Summary }}
             <div class="write-card__summary">

@@ -293,8 +293,8 @@ body>footer .footer-content {
 
 /* 3.5 卡片样式 */
 .deck-card {
-  padding: var(--spacing-unit);
-  margin-bottom: var(--spacing-unit);
+  padding: var(--spacing-unit) var(--spacing-unit);
+  margin: 0;
   border-bottom: 1px solid var(--color-gray);
 }
 
@@ -425,7 +425,6 @@ body>footer .footer-content {
 .now-card {
   padding: var(--spacing-unit);
   margin: 0;
-  border-bottom: 1px solid var(--color-gray);
   transition: background-color 0.2s ease;
 }
 
@@ -435,7 +434,7 @@ body>footer .footer-content {
 
 /* 保持 Now 卡片的特殊样式 */
 .now-card__content {
-  background: rgba(55, 92, 217, 0.1);
+  background: var(--color-gray);
   border-radius: 16px 16px 16px 4px;
   /* 左下角尖角 */
   padding: 1rem;
@@ -542,7 +541,6 @@ body>footer .footer-content {
 .write-card {
   padding: 1.25rem var(--spacing-unit);
   margin: 0;
-  border-bottom: 1px solid var(--color-gray);
   transition: background-color 0.2s ease;
 }
 
@@ -872,7 +870,7 @@ body>footer .footer-content {
 .quote-card,
 .read-card {
   padding: var(--spacing-unit);
-  border-bottom: 1px solid var(--color-gray);
+  margin: 0;
   transition: background-color 0.2s ease;
 }
 
@@ -911,8 +909,8 @@ body>footer .footer-content {
 
 /* Quote 卡片样式 */
 .quote-card {
-  padding: 1.25rem;
-  position: relative;
+  padding: var(--spacing-unit);
+  margin: 0;
   transition: background-color 0.2s ease;
 }
 

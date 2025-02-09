@@ -5,7 +5,7 @@
         {{ $page := .Page }}
         {{ $pages := .Pages }}
         {{ range $pages }}
-        <article class="now-card{{ with .Params.type }} now-card--{{ . }}{{ end }}">
+        <article class="deck-card now-card{{ with .Params.type }} now-card--{{ . }}{{ end }}">
             <time class="now-card__time" datetime="{{ .Date.Format " 2006-01-02" }}">
                 {{ .Date.Format "Jan 2" }}
             </time>
