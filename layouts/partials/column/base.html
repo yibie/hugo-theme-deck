@@ -1,6 +1,5 @@
 <section class="deck-column">
     <header class="deck-column__header">
-        <h2 class="deck-column__title">{{ .title }}</h2>
     </header>
     <div class="deck-column__content">
         {{ partial (printf "column/%s.html" .type) . }}

@@ -261,15 +261,17 @@ body>footer .footer-content {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.deck-column h2 {
-  margin: 0;
-  padding: 1rem;
-  font-size: 1.25rem;
-  font-weight: 500;
+.deck-column__header {
+  flex-shrink: 0;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-gray);
 }
 
+
 .deck-column__content {
-  padding: var(--spacing-unit);
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
 /* 不同类型列的头部样式变体 */
@@ -421,16 +423,19 @@ body>footer .footer-content {
 
 /* Now Column 特定样式 */
 .now-card {
-  padding: 1rem;
-  margin: 0.75rem var(--spacing-unit);
-  border: none;
-  position: relative;
+  padding: var(--spacing-unit);
+  margin: 0;
+  border-bottom: 1px solid var(--color-gray);
   transition: background-color 0.2s ease;
 }
 
-/* 消息气泡效果 */
+.now-card:last-child {
+  border-bottom: none;
+}
+
+/* 保持 Now 卡片的特殊样式 */
 .now-card__content {
-  background: var(--color-gray);
+  background: rgba(55, 92, 217, 0.1);
   border-radius: 16px 16px 16px 4px;
   /* 左下角尖角 */
   padding: 1rem;
@@ -530,12 +535,13 @@ body>footer .footer-content {
 
 /* 5.3 Write 列 */
 .write-column {
-  border-top: 3px solid #375CD9;
+  border-top: 3px solid #333333;
 }
 
 /* 卡片基础样式 */
 .write-card {
-  padding: var(--spacing-unit);
+  padding: 1.25rem var(--spacing-unit);
+  margin: 0;
   border-bottom: 1px solid var(--color-gray);
   transition: background-color 0.2s ease;
 }
@@ -549,7 +555,6 @@ body>footer .footer-content {
 /* 标题样式 */
 .write-card__title {
   margin: 0 0 0.75rem;
-  /* 增加底部间距，因为没有时间戳了 */
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
@@ -572,11 +577,6 @@ body>footer .footer-content {
   line-height: 1.6;
   color: var(--color-text);
   opacity: 0.8;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  /* 限制最多显示3行 */
 }
 
 .write-card:last-child {
