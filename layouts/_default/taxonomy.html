@@ -1,9 +1,24 @@
 {{ define "main" }}
 <div class="list-container">
-    <h1>{{ .Title }}</h1>
+    <header class="list-header">
+        <h1 class="list-title">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="list-description">{{ . }}</p>
+        {{ end }}
+    </header>
+
     <div class="taxonomy-list">
         {{ range .Pages }}
-        {{ partial "card.html" . }}
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{ with .Summary }}
+            <div class="taxonomy-card__summary">
+                {{ . | truncate 150 }}
+            </div>
+            {{ end }}
+        </article>
         {{ end }}
     </div>
 </div>

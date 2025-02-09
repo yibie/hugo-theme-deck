@@ -10,8 +10,8 @@
             <div class="write-card__summary">
                 {{ $summary := . | plainify }}
                 {{ if $summary }}
-                {{ if gt (len $summary) 120 }}
-                {{ substr $summary 0 120 }}...
+                {{ if gt (len $summary) 80 }}
+                {{ substr $summary 0 80 }}...
                 {{ else }}
                 {{ $summary }}
                 {{ end }}

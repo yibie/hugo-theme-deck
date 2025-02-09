@@ -2,7 +2,7 @@
 {{ $pages := .Pages }}
 <ul class="read-grid">
     {{ $sortedPages := $pages.ByDate.Reverse }}
-    {{ range first 2 $sortedPages }}
+    {{ range $sortedPages }}
     <li class="read-item">
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="read-link">
             {{/* 1. 优先使用指定的封面图 */}}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="list-container">
+    <header class="list-header">
+        <h1 class="list-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="term-list">
+        {{ range .Pages }}
+        <article class="term-card">
+            <h2 class="term-card__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <time class="term-card__time" datetime="{{ .Date.Format " 2006-01-02" }}">
+                {{ .Date.Format "Jan 2, 2006" }}
+            </time>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
