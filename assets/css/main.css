@@ -12,18 +12,25 @@
   --color-now-hover: rgba(255, 215, 0, 0.03);
 
   /* 布局尺寸 */
-  --spacing-unit: 1rem;
   --header-width: 300px;
+  --content-margin-left: calc(var(--header-width) / 2);
+  /* header 宽度的一半 */
   --column-width: 400px;
   --max-content-width: 1200px;
   --content-padding-top: 2rem;
   --content-side-padding: max(1rem, calc((100vw - var(--max-content-width)) / 2));
+  --spacing-unit: 1rem;
 
-  /* 响应式布局相关变量 */
-  --mobile-breakpoint: 768px;
+  /* 响应式断点 */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
 
   /* 添加主题切换过渡效果 */
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* 添加移动端的宽度变量 */
+  --header-width-mobile: 0px;
+  --content-margin-left-mobile: 0px;
 }
 
 /* 暗色主题变量 */
@@ -47,9 +54,17 @@
 }
 
 /* 2. 基础样式重置和全局样式 */
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  overflow-y: auto;
+  /* 允许垂直滚动 */
+  -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -200,7 +215,100 @@ body {
 main {
   margin-left: var(--header-width);
   min-height: 100vh;
-  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* 响应式布局调整 - 移动端 */
+@media (max-width: 768px) {
+
+  /* 重置移动端的 header 宽度变量 */
+  :root {
+    --header-width: 0px;
+    --content-margin-left: var(--content-margin-left-mobile);
+  }
+
+  /* Header 相关调整 */
+  .site-header {
+    height: 3rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-content {
+    height: 100%;
+    padding: 0 var(--content-side-padding);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* 移动端隐藏的元素 */
+  .site-bio,
+  .site-nav,
+  .site-subtitle,
+  .site-footer {
+    display: none;
+  }
+
+  /* 移动端标题样式 */
+  .site-title {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* 移动端主题切换按钮样式 */
+  .theme-toggle {
+    margin: 0;
+    padding: 0;
+  }
+
+  #theme-toggle {
+    padding: 0.25rem;
+  }
+
+  /* 移动端主内容区域调整 */
+  main {
+    margin-left: 0;
+    width: 100%;
+    min-height: calc(100vh - 3rem);
+  }
+
+  .single-main {
+    padding-top: calc(3.5rem + var(--spacing-unit));
+  }
+
+  /* Deck 容器调整 */
+  .deck-container {
+    margin-left: 0;
+    padding-top: 3rem;
+  }
+
+  .deck-scroll {
+    min-height: calc(100vh - 3rem);
+  }
+
+  /* Footer 调整 */
+  body>footer {
+    left: 0;
+    padding: 1rem var(--content-side-padding);
+  }
+}
+
+/* 3.3 Single Post Layout */
+.single-main {
+  padding: var(--content-padding-top) var(--content-side-padding);
+  max-width: 680px;
+  margin: 0 auto;
+  min-height: calc(100vh - var(--content-padding-top));
+  position: relative;
+}
+
+.single-post {
+  margin-bottom: 4rem;
 }
 
 /* 3.3 Footer */
@@ -230,19 +338,13 @@ body>footer .footer-content {
   opacity: 0.7;
 }
 
-/* 确保内容不会被 footer 遮挡 */
-.deck-container {
-  margin-left: var(--header-width);
-  padding-top: var(--content-padding-top);
-  background: var(--color-bg);
-}
-
 .deck-scroll {
   display: flex;
   padding: 0;
   margin: 0;
   gap: 0;
   justify-content: flex-start;
+  /* 移除固定高度限制 */
 }
 
 /* 3.4 列布局 */
@@ -266,7 +368,6 @@ body>footer .footer-content {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-gray);
 }
-
 
 .deck-column__content {
   padding: 0;
@@ -344,9 +445,11 @@ body>footer .footer-content {
 /* 5. 特定功能组件 */
 /* 5.1 Deck 布局 */
 .deck-container {
-  margin-left: 150px;
+  margin-left: var(--content-margin-left);
   padding-top: var(--content-padding-top);
   background: var(--color-bg);
+  min-height: calc(100vh - var(--content-padding-top));
+  position: relative;
 }
 
 .deck-scroll {
@@ -355,6 +458,7 @@ body>footer .footer-content {
   margin: 0;
   gap: 0;
   justify-content: flex-start;
+  /* 移除最小高度限制，让内容自然流动 */
 }
 
 /* 5.2 Now 列 */
@@ -627,15 +731,6 @@ body>footer .footer-content {
   margin: 0.25rem 0;
 }
 
-/* 单页文章样式 */
-.single-post {
-  max-width: 680px;
-  /* 减小内容宽度，提高可读性 */
-  margin: 0 auto;
-  padding: 3rem var(--spacing-unit);
-  background: var(--color-bg);
-}
-
 /* 文章头部 */
 .post-header {
   margin-bottom: 3rem;
@@ -660,7 +755,6 @@ body>footer .footer-content {
 /* 文章内容 */
 .post-content {
   font-family: Georgia, serif;
-  /* 使用衬线字体提高可读性 */
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--color-text);
@@ -1190,33 +1284,25 @@ body>footer .footer-content {
 /* 主题切换按钮样式 */
 .theme-toggle {
   margin-top: auto;
-  padding: 1rem;
-  text-align: center;
+  /* 在桌面端将按钮推到底部 */
+  padding: 0.5rem 0;
 }
 
-.theme-toggle button {
+#theme-toggle {
   background: none;
   border: none;
   padding: 0.5rem;
   cursor: pointer;
   font-size: 1.25rem;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.2s ease;
+  color: var(--color-text);
 }
 
-.theme-toggle button:hover {
+#theme-toggle:hover {
   opacity: 1;
 }
 
-/* 所有使用主题颜色的元素都添加过渡 */
-.site-header,
-.deck-column,
-.now-card,
-.write-card,
-.quote-card,
-.read-card {
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
 
 /* 代码样式 */
 /* 行内代码 */
@@ -1440,4 +1526,14 @@ pre code {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   opacity: 1;
+}
+
+/* 所有使用主题颜色的元素都添加过渡 */
+.site-header,
+.deck-column,
+.now-card,
+.write-card,
+.quote-card,
+.read-card {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }

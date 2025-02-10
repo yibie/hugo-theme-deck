@@ -3,7 +3,7 @@
         <!-- 站点标题区域 -->
         <div class="site-branding">
             <h1 class="site-title">
-                <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+                <a href="/">{{ .Site.Title }}</a>
             </h1>
             {{ with .Site.Params.subtitle }}
             <p class="site-subtitle">{{ . }}</p>
@@ -11,11 +11,11 @@
         </div>
 
         <!-- 自我简介区域 -->
+        {{ with .Site.Params.bio }}
         <div class="site-bio">
-            {{ with .Site.Params.bio }}
             <div class="bio-content">{{ . | markdownify }}</div>
-            {{ end }}
         </div>
+        {{ end }}
 
         <!-- 导航菜单 -->
         <nav class="site-nav">
