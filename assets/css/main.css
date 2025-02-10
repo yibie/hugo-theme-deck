@@ -281,6 +281,27 @@ main {
     margin-left: 0;
     width: 100%;
     min-height: calc(100vh - 3rem);
+
+    使用伪元素模拟分割线 通过 ::after 伪元素创建一条自定义线条，并设置左右间距： <CSS>.element {
+      position: relative;
+      /* 让伪元素基于此定位 */
+    }
+
+    .element::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      /* 定位到底部 */
+      left: 20px;
+      /* 左边间距 20px */
+      right: 20px;
+      /* 右边间距 20px */
+      height: 1px;
+      /* 线条高度 */
+      background: var(--color-gray);
+    }
+
+    效果 --------------------（左右各缩进 20px）
   }
 
   .single-main {
@@ -422,18 +443,30 @@ body>footer .footer-content {
 
 /* 3.5 卡片样式 */
 .deck-card {
-  padding: var(--spacing-unit) var(--spacing-unit);
+  padding: var(--spacing-unit);
   margin: 0;
-  border-bottom: 1px solid var(--color-gray);
-  box-sizing: border-box;
-  /* 确保padding不会增加宽度 */
-  word-wrap: break-word;
-  /* 允许长单词断行 */
-  overflow-wrap: break-word;
-  /* 现代浏览器的断行支持 */
+  position: relative;
+  /* 为伪元素提供定位上下文 */
 }
 
-.deck-card:last-child {
+/* 使用伪元素创建分割线 */
+.deck-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-unit);
+  /* 左边距 */
+  right: var(--spacing-unit);
+  /* 右边距 */
+  height: 1px;
+  background: var(--color-border);
+  /* 使用主题边框颜色 */
+  transition: background-color 0.3s ease;
+  /* 主题切换时的过渡效果 */
+}
+
+/* 移除原有的边框样式 */
+.deck-card {
   border-bottom: none;
 }
 
