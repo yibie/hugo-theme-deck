@@ -261,12 +261,18 @@ main {
   }
 
   /* 移动端主题切换按钮样式 */
-  .theme-toggle {
+  .header-content .theme-toggle {
     margin: 0;
+    /* 重置桌面端的 margin */
     padding: 0;
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    height: 100%;
+    /* 继承 header 的高度 */
   }
 
-  #theme-toggle {
+  .header-content .theme-toggle #theme-toggle {
     padding: 0.25rem;
   }
 
@@ -278,7 +284,21 @@ main {
   }
 
   .single-main {
-    padding-top: calc(3.5rem + var(--spacing-unit));
+    margin-top: 3rem;
+    /* 为固定定位的 header 留出空间 */
+    padding: var(--spacing-unit) var(--content-side-padding);
+  }
+
+  .post-header {
+    margin-top: var(--spacing-unit);
+    /* 添加顶部间距 */
+    margin-bottom: 2rem;
+  }
+
+  .post-title {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
   }
 
   /* Deck 容器调整 */
@@ -353,7 +373,7 @@ body>footer .footer-content {
   min-width: var(--column-width);
   max-width: var(--column-width);
   flex: 0 0 var(--column-width);
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border) !important;
   margin: 0;
   padding: 0;
   display: flex;
@@ -361,6 +381,10 @@ body>footer .footer-content {
 
   /* 所有使用主题颜色的元素都添加过渡 */
   transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.deck-scroll .deck-column:last-child {
+  border-right: none !important;
 }
 
 .deck-column__header {
@@ -373,6 +397,10 @@ body>footer .footer-content {
   padding: 0;
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  /* 防止水平滚动 */
+  width: 100%;
+  /* 确保内容宽度不超过列宽 */
 }
 
 /* 不同类型列的头部样式变体 */
@@ -397,6 +425,12 @@ body>footer .footer-content {
   padding: var(--spacing-unit) var(--spacing-unit);
   margin: 0;
   border-bottom: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  /* 确保padding不会增加宽度 */
+  word-wrap: break-word;
+  /* 允许长单词断行 */
+  overflow-wrap: break-word;
+  /* 现代浏览器的断行支持 */
 }
 
 .deck-card:last-child {
@@ -1225,7 +1259,9 @@ body>footer .footer-content {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, var(--color-primary) 0%, var(--color-gray) 100%);
+  background: linear-gradient(45deg,
+      var(--color-gray) 0%,
+      var(--color-bg) 100%);
 }
 
 /* 滚动条美化 */
@@ -1281,28 +1317,26 @@ body>footer .footer-content {
   font-size: 0.7rem;
 }
 
-/* 主题切换按钮样式 */
+/* 桌面端主题切换按钮样式 */
 .theme-toggle {
   margin-top: auto;
-  /* 在桌面端将按钮推到底部 */
-  padding: 0.5rem 0;
+  padding: 1rem;
+  text-align: center;
 }
 
-#theme-toggle {
+.theme-toggle button {
   background: none;
   border: none;
   padding: 0.5rem;
   cursor: pointer;
   font-size: 1.25rem;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
-  color: var(--color-text);
 }
 
-#theme-toggle:hover {
+.theme-toggle button:hover {
   opacity: 1;
 }
-
 
 /* 代码样式 */
 /* 行内代码 */
