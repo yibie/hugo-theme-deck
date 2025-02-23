@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://your-domain.com/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-deck'
@@ -38,7 +38,7 @@ Your bio text here. You can use **markdown** formatting.
 
 [[menu.main]]
 name = "Rss"
-url = "/feed.xml"
+url = "/index.xml"
 weight = 40
 
 # SEO related
@@ -57,7 +57,7 @@ images = ["/images/default-og-image.jpg"]  # 默认 Open Graph 图片
 
 [outputFormats.RSS]
   mediatype = "application/rss+xml"
-  baseName = "feed"
+  baseName = "index"
 
 [services.rss]
   limit = 20  # 限制 RSS 输出的文章数量
