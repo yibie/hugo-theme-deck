@@ -1,6 +1,8 @@
-{{ $page := .Page }}
-{{ $pages := .Pages }}
-{{ range $pages }}
+{{ $categoryTerm := .category }}
+{{ $termPage := site.GetPage (printf "categories/%s" $categoryTerm) }}
+{{ if $termPage }}
+{{ $pagesInTerm := $termPage.Pages.ByDate.Reverse }}
+{{ range $pagesInTerm }}
 <article class="deck-card quote-card">
     <a href="{{ .RelPermalink }}">
         <div class="quote-card__content">
@@ -20,4 +22,7 @@
         {{ end }}
     </a>
 </article>
+{{ end }}
+{{ else }}
+<p>Category '{{ $categoryTerm }}' not found.</p>
 {{ end }}

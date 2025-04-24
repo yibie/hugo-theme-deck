@@ -1,24 +1,25 @@
 {{/* 写作列模板 */}}
-<div class="deck-column--write">
-
-
-    <div class="deck-column__content">
-        {{ range .Pages }}
-        <article class="deck-card write-card">
-            <h3 class="write-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            {{ with .Summary }}
-            <div class="write-card__summary">
-                {{ $summary := . | plainify }}
-                {{ if $summary }}
-                {{ if gt (len $summary) 80 }}
-                {{ substr $summary 0 80 }}...
-                {{ else }}
-                {{ $summary }}
-                {{ end }}
-                {{ end }}
-            </div>
-            {{ end }}
-        </article>
+{{ $categoryTerm := .category }} {{/* 从上下文中获取 category 值 */}}
+{{ $termPage := site.GetPage (printf "categories/%s" $categoryTerm) }} {{/* 获取该 category 对应的分类页面 */}}
+{{ if $termPage }}
+{{ $pagesInTerm := $termPage.Pages.ByDate.Reverse }} {{/* 获取该分类下的所有页面,并按日期倒序 */}}
+{{ range $pagesInTerm }}
+<article class="deck-card write-card">
+    <h3 class="write-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ with .Summary }}
+    <div class="write-card__summary">
+        {{ $summary := . | plainify }}
+        {{ if $summary }}
+        {{ if gt (len $summary) 80 }}
+        {{ substr $summary 0 80 }}...
+        {{ else }}
+        {{ $summary }}
+        {{ end }}
         {{ end }}
     </div>
-</div>
+    {{ end }}
+</article>
+{{ end }}
+{{ else }}
+<p>Category '{{ $categoryTerm }}' not found.</p> {{/* 如果找不到分类页面，可以显示提示信息 */}}
+{{ end }}

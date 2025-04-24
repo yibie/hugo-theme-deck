@@ -1,7 +1,8 @@
 <section class="deck-column">
     <header class="deck-column__header">
+        <h2>{{ .title }}</h2>
     </header>
     <div class="deck-column__content">
-        {{ partial (printf "column/%s.html" .type) . }}
+        {{ partial (printf "column/%s.html" .style) . }}
     </div>
 </section>
