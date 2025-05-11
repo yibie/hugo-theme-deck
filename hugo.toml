@@ -13,11 +13,11 @@ Your bio text here. You can use **markdown** formatting.
   # Columns Configuration
   [params.sections]
     columns = [
-      { id = "now", title = "Now", category = "now", style = "now-column" },
-      { id = "write", title = "Writing", category = "write", style = "write-column" },
-      { id = "quote", title = "Quotes", category = "quotes", style = "quote-column" },
-      { id = "read", title = "Reading", category = "read", style = "read-column" },
-      { id = "til", title = "TIL", category = "til", style = "write-column" }
+      { id = "now", title = "Now", category = "now", style = "now" },
+      { id = "write", title = "Writing", category = "write", style = "write" },
+      { id = "quote", title = "Quotes", category = "quotes", style = "quote" },
+      { id = "read", title = "Reading", category = "read", style = "read" },
+      { id = "til", title = "TIL", category = "til", style = "write" }
     ]
 
 # Main Menu Configuration

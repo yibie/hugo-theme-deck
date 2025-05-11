@@ -2895,14 +2895,6 @@ pre code {
     opacity: 0.8;
   }
 
-  .post-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1.5rem auto;
-    border-radius: 4px;
-  }
-
   /* 文章底部 */
   .post-footer {
     margin-top: 4rem;
@@ -3814,19 +3806,19 @@ pre code {
   }
 }
 
-/* === Image Width in Posts === */
-/* Adjust '.post-content' selector below if your theme uses a different class for the main article content area */
+/* === Image Width and Style in Posts === */
+/* Adjust '.post-content' selector if your theme uses a different class for the main article content area */
 .post-content img {
   width: 600px;
-  /* Your desired fixed width */
+  /* 1. 固定宽度 (可以修改这个值) */
   max-width: 100%;
-  /* Prevent overflow on smaller screens */
+  /* 2. 响应式：小屏幕上缩小 */
   height: auto;
-  /* Maintain aspect ratio */
+  /* 3. 保持宽高比 */
   display: block;
-  /* Optional: Center image */
-  margin-left: auto;
-  /* Optional: Center image */
-  margin-right: auto;
-  /* Optional: Center image */
+  /* 4. 让 margin:auto 生效 */
+  margin: 1.5rem auto;
+  /* 5. 上下 1.5rem 外边距，左右自动居中 */
+  border-radius: 4px;
+  /* 6. 轻微圆角 (来自旧规则) */
 }

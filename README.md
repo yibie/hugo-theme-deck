@@ -61,10 +61,10 @@ theme = 'hugo-theme-deck' # Your theme
       # - title: Display name in header
       # - category: Content category to display
       # - style: Visual style to apply
-      { id = "now", title = "Now", category = "now", style = "now-column" },
-      { id = "write", title = "Writing", category = "write", style = "write-column" },
-      { id = "quote", title = "Quotes", category = "quotes", style = "quote-column" },
-      { id = "read", title = "Reading", category = "read", style = "read-column" },
+      { id = "now", title = "Now", category = "now", style = "now" },
+      { id = "write", title = "Writing", category = "write", style = "write" },
+      { id = "quote", title = "Quotes", category = "quotes", style = "quote" },
+      { id = "read", title = "Reading", category = "read", style = "read" },
       # Example of reusing a style
       { id = "til", title = "TIL", category = "til", style = "write-column" }  # TIL column is also use write-column style
     ]
