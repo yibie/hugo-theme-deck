@@ -29,13 +29,13 @@
                 {{ end }}
 
                 {{ if eq .style "quote-column" }}
-                {{ partial "column/quote.html" (dict "Page" $ "Pages" $pages) }}
+                {{ partial "column/quote.html" . }}
                 {{ else if eq .style "write-column" }}
-                {{ partial "column/write.html" (dict "Page" $ "Pages" $pages) }}
+                {{ partial "column/write.html" . }}
                 {{ else if eq .style "now-column" }}
-                {{ partial "column/now.html" (dict "Page" $ "Pages" $pages) }}
+                {{ partial "column/now.html" . }}
                 {{ else if eq .style "read-column" }}
-                {{ partial "column/read.html" (dict "Page" $ "Pages" $pages) }}
+                {{ partial "column/read.html" . }}
                 {{ end }}
             </div>
         </section>
