@@ -172,7 +172,7 @@ main {
     margin-left: var(--header-width);
     min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     /* 防止 main 产生额外滚动条 */
 }
 
