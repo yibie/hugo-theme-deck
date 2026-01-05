@@ -221,7 +221,7 @@ body>footer .footer-content {
 
 /* 3.4 列布局 */
 .deck-container {
-    margin-left: var(--content-margin-left);
+    margin-left: 0;
     padding-top: var(--content-padding-top);
     background: var(--color-bg);
     min-height: calc(100vh - var(--content-padding-top));
