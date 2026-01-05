@@ -159,7 +159,6 @@
 .now-card {
     padding: var(--spacing-unit);
     margin: 0 0 1.5rem 0;
-    transition: background-color 0.2s ease;
 }
 
 .now-card:last-child {
@@ -172,7 +171,7 @@
     padding: 1rem;
     position: relative;
     max-width: 85%;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .now-card__header {
@@ -280,7 +279,6 @@
 .write-card {
     padding: 1.25rem var(--spacing-unit);
     margin: 0 0 1.5rem 0;
-    transition: background-color 0.2s ease;
 }
 
 .write-card:hover {
@@ -346,7 +344,6 @@
 .quote-card {
     padding: var(--spacing-unit);
     margin: 0 0 1.5rem 0;
-    transition: background-color 0.2s ease;
 }
 
 .quote-card:hover {
