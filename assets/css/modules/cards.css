@@ -45,11 +45,15 @@
 .post-card h3 a {
     color: var(--color-text);
     text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 .deck-card__title a:hover,
 .post-card h3 a:hover {
-    color: var(--color-primary);
+    color: var(--color-text);
+    /* 保持黑色 */
+    opacity: 0.7;
+    /* 仅降低透明度 */
 }
 
 .deck-card__summary,
@@ -83,7 +87,7 @@
 }
 
 .now-column a {
-    color: #333333;
+    color: var(--color-text);
 }
 
 .now-column .post-card:hover {
@@ -109,7 +113,7 @@
 }
 
 .now-column .post-card h3 a:hover {
-    color: #333333;
+    opacity: 0.7;
 }
 
 .now-column .post-card .summary {
@@ -219,7 +223,7 @@
 }
 
 .now-card:hover .now-card__title a {
-    color: #B45309;
+    opacity: 0.7;
 }
 
 .now-card:hover .now-card__tag {
@@ -251,7 +255,7 @@
 }
 
 .write-card:hover .write-card__title a {
-    color: #DB2777;
+    opacity: 0.7;
 }
 
 .write-card__summary {
@@ -279,7 +283,7 @@
 }
 
 .quote-column a {
-    color: #15803D;
+    color: var(--color-text);
 }
 
 .quote-card {
@@ -368,7 +372,7 @@
 }
 
 .read-column a {
-    color: #B45309;
+    color: var(--color-text);
 }
 
 .read-card:last-child {
