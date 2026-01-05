@@ -102,26 +102,23 @@
 .site-footer {
     flex-shrink: 0;
     padding: 1.5rem var(--spacing-unit);
-    border-top: none;
-    /* 移除原来的边框 */
+    border-top: 1px solid var(--color-border);
     background: transparent;
-    /* 让背景透出来 */
     margin-top: auto;
 }
 
 .footer-content {
-    text-align: left;
-    /* 与菜单对齐 */
+    text-align: center;
     opacity: 0.6;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
 
 .footer-links {
     display: flex;
-    flex-direction: row;
-    /* 改为横向 */
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .footer-links a {
@@ -138,7 +135,8 @@
 /* Theme Toggle */
 .theme-toggle {
     margin-top: 1rem;
-    padding-left: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #theme-toggle {
