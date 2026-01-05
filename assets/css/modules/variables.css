@@ -4,6 +4,8 @@
   --color-bg: #FFFFFF;
   --color-text: #1C1B1B;
   --color-gray: #E5E5E5;
+  --color-tag-bg: rgba(0, 0, 0, 0.05);
+  /* 新增 Tag 背景色变量 */
   --color-primary: #375CD9;
   --color-border: rgba(0, 0, 0, 0.1);
   --color-hover-bg: rgba(0, 0, 0, 0.04);
@@ -65,6 +67,8 @@
   --color-bg: #1A1B1E;
   --color-text: #E5E5E5;
   --color-gray: #2A2B2E;
+  --color-tag-bg: rgba(255, 255, 255, 0.1);
+  /* 暗色模式加深 Tag 背景 */
   --color-primary: #5C7CFF;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-hover-bg: rgba(255, 255, 255, 0.02);

@@ -188,7 +188,8 @@
 .now-card__tag {
     font-size: 0.75rem;
     padding: 0.25rem 0.75rem;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--color-tag-bg);
+    /* 使用变量 */
     border-radius: 12px;
     color: var(--color-text);
 }
@@ -222,8 +223,8 @@
 }
 
 .now-card:hover .now-card__tag {
-    background: rgba(0, 0, 0, 0.05);
-    /* 保持原样 */
+    background: var(--color-tag-bg);
+    /* 保持一致 */
 }
 
 /* 5.3 Write 列 */

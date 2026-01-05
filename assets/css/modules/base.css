@@ -17,3 +17,40 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
 }
+
+/* Global Selection Tint */
+::selection {
+    background: rgba(55, 92, 217, 0.2);
+    /* Primary color low opacity */
+    color: inherit;
+}
+
+/* Ghost Scrollbar - Chrome/Safari/Webkit */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+/* Show scrollbar on hover of container or scrollbar itself */
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode scrollbar */
+:root[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
