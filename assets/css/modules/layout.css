@@ -267,7 +267,7 @@ body>footer .footer-content {
     /* 移除左右内边距 */
     margin: 0 1.25rem;
     /* 增加左右外边距以对齐卡片 */
-    border-bottom: 1px solid var(--color-gray);
+    border-bottom: none;
 }
 
 .deck-column__content {
