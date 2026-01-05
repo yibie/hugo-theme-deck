@@ -115,17 +115,3 @@ body::before {
     background: var(--tag-color);
     color: white;
 }
-
-/* 桌面端特有的滚动条美化 */
-.deck-container::-webkit-scrollbar {
-    height: 4px;
-}
-
-.deck-container::-webkit-scrollbar-track {
-    background: var(--color-gray);
-}
-
-.deck-container::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 2px;
-}
