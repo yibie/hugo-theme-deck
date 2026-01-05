@@ -232,7 +232,8 @@ body>footer .footer-content {
     display: flex;
     padding: 0;
     margin: 0;
-    gap: 0;
+    gap: 2rem;
+    /* 增加列间距 */
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
     /* 磁性滚动 */
