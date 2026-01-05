@@ -280,21 +280,7 @@ body>footer .footer-content {
 }
 
 /* 不同类型列的头部样式变体 */
-.deck-column--quotes .deck-column__header {
-    border-bottom-color: var(--quote-accent);
-}
-
-.deck-column--write .deck-column__header {
-    border-bottom-color: var(--write-accent);
-}
-
-.deck-column--now .deck-column__header {
-    border-bottom-color: var(--now-accent);
-}
-
-.deck-column--read .deck-column__header {
-    border-bottom-color: var(--read-accent);
-}
+/* 不同类型列的头部样式变体 - 已移除边框颜色 */
 
 /* 响应式布局调整 - 移动端 */
 @media (max-width: 768px) {
