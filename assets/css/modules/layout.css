@@ -126,8 +126,8 @@
 .footer-links a:visited,
 .footer-links a:hover,
 .footer-links a:active {
-    color: var(--color-text);
-    text-decoration: none;
+    color: var(--color-text) !important;
+    text-decoration: none !important;
     opacity: 0.6;
 }
 

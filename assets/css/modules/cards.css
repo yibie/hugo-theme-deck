@@ -80,6 +80,21 @@
     opacity: 0.7;
 }
 
+/* Stretched Link - 让整个卡片可点击 */
+.deck-card__title a::after,
+.post-card h3 a::after,
+.now-card__title a::after,
+.write-card__title a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
 .deck-card__summary,
 .post-card .summary {
     font-size: 0.875rem;
