@@ -3,13 +3,14 @@
 
 {{/* 尝试根据文章的第一个分类来寻找对应的内页模板 */}}
 {{ if .Params.categories }}
-{{ $category := index .Params.categories 0 }}
-{{/* 检查是否存在 partials/single/{category}.html */}}
+{{ $category := index .Params.categories 0 | lower }}
+{{/* DEBUG: Checking template partials/single/{{$category}}.html */}}
 {{ if (templates.Exists (printf "partials/single/%s.html" $category)) }}
 {{ $layout = $category }}
 {{ end }}
 {{ end }}
 
 {{/* 加载对应的内页模板 */}}
+<!-- Layout: {{ $layout }} -->
 {{ partial (printf "single/%s.html" $layout) . }}
 {{ end }}
