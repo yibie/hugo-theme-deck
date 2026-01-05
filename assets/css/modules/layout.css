@@ -176,7 +176,8 @@ main {
     margin-left: var(--header-width);
     min-height: 100vh;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    /* 防止 main 产生额外滚动条 */
 }
 
 /* 3.3 Single Post Layout */
@@ -225,7 +226,11 @@ body>footer .footer-content {
     padding-top: var(--content-padding-top);
     background: var(--color-bg);
     min-height: calc(100vh - var(--content-padding-top));
+    height: calc(100vh - var(--content-padding-top));
     position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* 让 container 成为唯一的水平滚动容器 */
 }
 
 .deck-scroll {
@@ -237,12 +242,15 @@ body>footer .footer-content {
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
     /* 磁性滚动 */
-    overflow-x: auto;
+    overflow: visible;
+    /* 不在此处滚动，由父容器处理 */
     padding-bottom: 2rem;
     /* 预留阴影空间 */
-    height: auto;
-    /* 让容器宽度随列宽度扩展 */
+    height: 100%;
     width: max-content;
+    /* 宽度随列扩展，父容器负责滚动 */
+    background: var(--color-bg);
+    /* 确保背景覆盖全部宽度 */
 }
 
 .deck-column {
