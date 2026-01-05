@@ -523,3 +523,100 @@
 :root[data-theme="dark"] .post-content tr:hover td {
     background-color: rgba(var(--color-primary-rgb), 0.1);
 }
+
+/* ------------------------------------------------------------------
+   Dynamic Single Layout Styles (V3.13)
+   ------------------------------------------------------------------ */
+
+/* Now Style Single Page */
+.single-post--now .post-header {
+    margin-bottom: 2rem;
+}
+
+.single-post--now .status-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+}
+
+.single-post--now .now-card__content {
+    background: var(--color-gray);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border-bottom-left-radius: 4px;
+    /* Callout bubble style */
+    max-width: 100%;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.single-post--now .post-content {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-family: var(--font-sans);
+}
+
+.single-post--now .post-footer {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Quote Style Single Page */
+.single-post--quote .quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.single-post--quote blockquote {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    border: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    color: var(--color-text);
+    position: relative;
+}
+
+.single-post--quote .quote-context {
+    font-size: 1.125rem;
+    opacity: 0.7;
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.single-post--quote .quote-source {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 4rem;
+    letter-spacing: -0.01em;
+}
+
+.single-post--quote .post-meta {
+    margin-top: 0;
+    opacity: 0.5;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.single-post--quote .post-tags {
+    margin: 0;
+    display: inline-flex;
+}
