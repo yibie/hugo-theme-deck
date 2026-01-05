@@ -1,0 +1,36 @@
+<div class="single-main">
+    <article class="single-post single-post--quote">
+        <div class="quote-container"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
+            <blockquote
+                style="font-family: Georgia, serif; font-size: 2.5rem; line-height: 1.4; border: none; padding: 0; margin: 0; color: var(--color-text);">
+                "{{ .Title }}"
+            </blockquote>
+
+            {{ if .Content }}
+            <div class="quote-context" style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.8; max-width: 80%;">
+                {{ .Content }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.source }}
+            <div class="quote-source" style="margin-top: 2rem; font-weight: 600; font-size: 1.25rem; color: #22C55E;">
+                — {{ . }}
+            </div>
+            {{ end }}
+
+            <div class="post-meta" style="margin-top: 3rem;">
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ with .Params.tags }}
+                <div class="post-tags" style="display: inline-block; margin-left: 1rem; margin-bottom: 0;">
+                    {{ range . }}
+                    <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </article>
+</div>

@@ -1,37 +1,15 @@
 {{ define "main" }}
-<div class="single-main">
-  <article class="single-post">
-    <header class="post-header">
-      <h1 class="post-title">{{ .Title }}</h1>
+{{ $layout := "default" }}
 
-      <div class="post-meta">
-        <time datetime="{{ .Date.Format " 2006-01-02" }}">
-          {{ .Date.Format "January 2, 2006" }}
-        </time>
+{{/* 尝试根据文章的第一个分类来寻找对应的内页模板 */}}
+{{ if .Params.categories }}
+{{ $category := index .Params.categories 0 }}
+{{/* 检查是否存在 partials/single/{category}.html */}}
+{{ if (templates.Exists (printf "partials/single/%s.html" $category)) }}
+{{ $layout = $category }}
+{{ end }}
+{{ end }}
 
-        {{ with .Params.categories }}
-        <div class="post-categories">
-          {{ range . }}
-          <span class="category">{{ . }}</span>
-          {{ end }}
-        </div>
-        {{ end }}
-      </div>
-    </header>
-
-    <div class="post-content">
-      {{ .Content }}
-    </div>
-
-    {{ with .Params.tags }}
-    <footer class="post-footer">
-      <div class="post-tags">
-        {{ range . }}
-        <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
-        {{ end }}
-      </div>
-    </footer>
-    {{ end }}
-  </article>
-</div>
+{{/* 加载对应的内页模板 */}}
+{{ partial (printf "single/%s.html" $layout) . }}
 {{ end }}

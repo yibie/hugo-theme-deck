@@ -1,0 +1,30 @@
+<div class="single-main">
+    <article class="single-post single-post--now">
+        <!-- Now posts often don't need a loud title, or the title is just the date/status -->
+        <header class="post-header">
+            <div class="post-meta">
+                <span class="status-tag">NOW</span>
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+            </div>
+        </header>
+
+        <!-- Bubble style content container -->
+        <div class="now-card__content" style="max-width: 100%; margin-bottom: 2rem;">
+            <div class="post-content" style="font-size: 1.25rem; line-height: 1.6;">
+                {{ .Content }}
+            </div>
+        </div>
+
+        {{ with .Params.tags }}
+        <footer class="post-footer" style="border-top: none; margin-top: 0;">
+            <div class="post-tags">
+                {{ range . }}
+                <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+                {{ end }}
+            </div>
+        </footer>
+        {{ end }}
+    </article>
+</div>
