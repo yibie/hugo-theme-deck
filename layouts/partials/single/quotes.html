@@ -5,15 +5,19 @@
                 "{{ .Title }}"
             </blockquote>
 
-            {{ if .Content }}
-            <div class="quote-context">
-                {{ .Content }}
+            {{/* Source/Author area */}}
+            {{ if or .Params.author .Params.source }}
+            <div class="quote-source">
+                —
+                {{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
+                {{ if and .Params.author .Params.source }}<span class="separator">, </span>{{ end }}
+                {{ with .Params.source }}<cite class="source">{{ . }}</cite>{{ end }}
             </div>
             {{ end }}
 
-            {{ with .Params.source }}
-            <div class="quote-source">
-                — {{ . }}
+            {{ if .Content }}
+            <div class="quote-context">
+                {{ .Content }}
             </div>
             {{ end }}
 
