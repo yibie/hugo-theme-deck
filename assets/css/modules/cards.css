@@ -42,18 +42,42 @@
 }
 
 .deck-card__title a,
-.post-card h3 a {
-    color: var(--color-text);
-    text-decoration: none;
+.deck-card__title a:link,
+.deck-card__title a:visited,
+.deck-card__title a:hover,
+.deck-card__title a:active,
+.post-card h3 a,
+.post-card h3 a:link,
+.post-card h3 a:visited,
+.post-card h3 a:hover,
+.post-card h3 a:active,
+.now-card__title a,
+.now-card__title a:link,
+.now-card__title a:visited,
+.now-card__title a:hover,
+.now-card__title a:active,
+.write-card__title a,
+.write-card__title a:link,
+.write-card__title a:visited,
+.write-card__title a:hover,
+.write-card__title a:active,
+.read-card__title a,
+.read-card__title a:link,
+.read-card__title a:visited,
+.read-card__title a:hover,
+.read-card__title a:active {
+    color: var(--color-text) !important;
+    text-decoration: none !important;
     transition: opacity 0.2s ease;
+    border-bottom: none !important;
 }
 
 .deck-card__title a:hover,
-.post-card h3 a:hover {
-    color: var(--color-text);
-    /* 保持黑色 */
+.post-card h3 a:hover,
+.now-card__title a:hover,
+.write-card__title a:hover,
+.read-card__title a:hover {
     opacity: 0.7;
-    /* 仅降低透明度 */
 }
 
 .deck-card__summary,
