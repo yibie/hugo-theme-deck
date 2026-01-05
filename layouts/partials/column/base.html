@@ -3,6 +3,16 @@
         <h2>{{ .title }}</h2>
     </header>
     <div class="deck-column__content">
-        {{ partial (printf "column/%s.html" .style) . }}
+        {{ $category := .category }}
+        {{ $pages := where site.RegularPages "Params.categories" "intersect" (slice $category) }}
+
+        {{ $styleName := replace .style "-column" "" }}
+        {{ $partialPath := printf "column/%s.html" $styleName }}
+
+        {{ if templates.Exists (printf "partials/%s" $partialPath) }}
+        {{ partial $partialPath (dict "category" $category "pages" $pages) }}
+        {{ else }}
+        {{ partial "column/write.html" (dict "category" $category "pages" $pages) }}
+        {{ end }}
     </div>
 </section>
