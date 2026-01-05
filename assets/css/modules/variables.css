@@ -1,0 +1,54 @@
+/* assets/css/modules/variables.css */
+:root {
+  /* 亮色主题变量 */
+  --color-bg: #FFFFFF;
+  --color-text: #1C1B1B;
+  --color-gray: #E5E5E5;
+  --color-primary: #375CD9;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-hover-bg: rgba(0, 0, 0, 0.02);
+  --color-quote-hover: rgba(34, 197, 94, 0.03);
+  --color-write-hover: rgba(219, 39, 119, 0.03);
+  --color-now-hover: rgba(255, 215, 0, 0.03);
+
+  /* 布局尺寸 */
+  --header-width: 300px;
+  --content-margin-left: calc(var(--header-width) / 2);
+  --column-width: 400px;
+  --max-content-width: 1200px;
+  --content-padding-top: 2rem;
+  --content-side-padding: max(1rem, calc((100vw - var(--max-content-width)) / 2));
+  --spacing-unit: 1rem;
+
+  /* 响应式断点 */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+
+  /* 主题切换过渡效果 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  --header-width-mobile: 0px;
+  --content-margin-left-mobile: 0px;
+
+  --color-primary-rgb: 55, 92, 217;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #1A1B1E;
+  --color-text: #E5E5E5;
+  --color-gray: #2A2B2E;
+  --color-primary: #5C7CFF;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-hover-bg: rgba(255, 255, 255, 0.02);
+  --color-quote-hover: rgba(34, 197, 94, 0.05);
+  --color-write-hover: rgba(219, 39, 119, 0.05);
+  --color-now-hover: rgba(255, 215, 0, 0.05);
+  --color-code-bg: #282c34;
+  --color-code-text: #abb2bf;
+  --color-code-comment: #7f848e;
+  --color-code-keyword: #c678dd;
+  --color-code-string: #98c379;
+  --color-code-number: #d19a66;
+  --color-code-function: #61afef;
+  --color-primary-rgb: 92, 124, 255;
+}

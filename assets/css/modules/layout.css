@@ -1,0 +1,329 @@
+/* assets/css/modules/layout.css */
+/* 3.1 Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--header-width);
+    background: var(--color-bg);
+    border-right: 1px solid var(--color-border);
+    box-shadow: none;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-content {
+    flex: 1;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.site-branding {
+    flex-shrink: 0;
+}
+
+.site-title {
+    font-size: 1.75rem;
+    font-weight: 750;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.site-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-title a:hover {
+    color: var(--color-primary);
+}
+
+.site-subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.site-bio {
+    flex-shrink: 0;
+}
+
+.bio-content {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+.bio-content p {
+    margin: 0.75rem 0;
+}
+
+.site-nav {
+    flex-grow: 1;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-item a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.menu-item a:hover {
+    opacity: 1;
+    color: var(--color-primary);
+    transform: translateX(4px);
+}
+
+.site-footer {
+    flex-shrink: 0;
+    padding: var(--spacing-unit);
+    border-top: 1px solid var(--color-gray);
+    background: var(--color-bg);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* 3.2 Main Content */
+main {
+    margin-left: var(--header-width);
+    min-height: 100vh;
+    position: relative;
+    overflow: visible;
+}
+
+/* 3.3 Single Post Layout */
+.single-main {
+    padding: var(--content-padding-top) var(--content-side-padding);
+    max-width: 680px;
+    margin: 0 auto;
+    min-height: calc(100vh - var(--content-padding-top));
+    position: relative;
+}
+
+.single-post {
+    margin-bottom: 4rem;
+}
+
+/* 3.3 Footer */
+body>footer {
+    position: fixed;
+    bottom: 0;
+    left: var(--header-width);
+    right: 0;
+    padding: 1rem var(--content-side-padding);
+    background: var(--color-bg);
+    text-align: center;
+    z-index: 100;
+
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--color-bg) 20%);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body>footer .footer-content {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+/* 3.4 列布局 */
+.deck-container {
+    margin-left: var(--content-margin-left);
+    padding-top: var(--content-padding-top);
+    background: var(--color-bg);
+    min-height: calc(100vh - var(--content-padding-top));
+    position: relative;
+}
+
+.deck-scroll {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    justify-content: flex-start;
+}
+
+.deck-column {
+    width: var(--column-width);
+    min-width: var(--column-width);
+    max-width: var(--column-width);
+    flex: 0 0 var(--column-width);
+    border-right: 1px solid var(--color-border) !important;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.deck-scroll .deck-column:last-child {
+    border-right: none !important;
+}
+
+.deck-column__header {
+    flex-shrink: 0;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.deck-column__content {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 不同类型列的头部样式变体 */
+.deck-column--quotes .deck-column__header {
+    border-bottom-color: var(--quote-accent);
+}
+
+.deck-column--write .deck-column__header {
+    border-bottom-color: var(--write-accent);
+}
+
+.deck-column--now .deck-column__header {
+    border-bottom-color: var(--now-accent);
+}
+
+.deck-column--read .deck-column__header {
+    border-bottom-color: var(--read-accent);
+}
+
+/* 响应式布局调整 - 移动端 */
+@media (max-width: 768px) {
+    :root {
+        --header-width: 0px;
+        --content-margin-left: var(--content-margin-left-mobile);
+    }
+
+    .site-header {
+        height: 3rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-content {
+        height: 100%;
+        padding: 0 var(--content-side-padding);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .site-bio,
+    .site-nav,
+    .site-subtitle,
+    .site-footer {
+        display: none;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        min-height: calc(100vh - 3rem);
+        position: relative;
+    }
+
+    main::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background: var(--color-gray);
+    }
+
+    .single-main {
+        margin-top: 3rem;
+        padding: var(--spacing-unit) var(--content-side-padding);
+    }
+
+    .post-header {
+        margin-top: var(--spacing-unit);
+        margin-bottom: 2rem;
+    }
+
+    .post-title {
+        font-size: 1.75rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .deck-container {
+        margin-left: 0;
+        padding-top: 3rem;
+    }
+
+    .deck-scroll {
+        min-height: calc(100vh - 3rem);
+    }
+
+    body>footer {
+        left: 0;
+        padding: 1rem var(--content-side-padding);
+    }
+}

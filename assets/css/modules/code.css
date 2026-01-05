@@ -1,0 +1,73 @@
+/* assets/css/modules/code.css */
+code {
+    background: var(--color-gray);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.875em;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    color: var(--color-code-text);
+    margin: 0 0.2em;
+}
+
+pre {
+    background: var(--color-code-bg);
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-code-text);
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+.highlight {
+    background: var(--color-code-bg);
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.highlight pre {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none;
+}
+
+/* 代码高亮颜色 - One Dark Pro 主题风格 */
+.highlight .c {
+    color: var(--color-code-comment);
+    font-style: italic;
+}
+
+.highlight .k {
+    color: var(--color-code-keyword);
+    font-weight: 500;
+}
+
+.highlight .s {
+    color: var(--color-code-string);
+}
+
+.highlight .n {
+    color: var(--color-code-text);
+}
+
+.highlight .o {
+    color: var(--color-code-text);
+    margin: 0 0.2em;
+}
+
+.highlight .m {
+    color: var(--color-code-number);
+}
+
+.highlight .f {
+    color: var(--color-code-function);
+}

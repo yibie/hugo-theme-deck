@@ -3,8 +3,16 @@
 
 <head>
   {{ partial "head.html" . }}
-  {{ $style := resources.Get "css/main.css" | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ $cssFiles := slice "css/modules/variables.css" "css/modules/base.css" "css/modules/layout.css"
+  "css/modules/cards.css" "css/modules/pages.css" "css/modules/code.css" "css/modules/animations.css" "css/main.css" }}
+  {{ $styles := slice }}
+  {{ range $cssFiles }}
+  {{ with resources.Get . }}
+  {{ $styles = $styles | append . }}
+  {{ end }}
+  {{ end }}
+  {{ $bundle := $styles | resources.Concat "css/main.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}">
 </head>
 
 <body>

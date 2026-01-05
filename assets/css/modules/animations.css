@@ -1,0 +1,98 @@
+/* assets/css/modules/animations.css */
+/* 图片懒加载与通用过渡 */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-image:not([src^="data:"]) {
+    opacity: 1;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray);
+}
+
+.image-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 标签云通用悬浮效果 */
+.post-tag {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    margin: 0.2em;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+    border-radius: 2em;
+    background: var(--color-gray);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.post-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+/* 彩色标签 */
+.post-tag:nth-of-type(5n+1):hover {
+    --tag-color: #e11d48;
+    background: var(--tag-color);
+    color: white;
+}
+
+.post-tag:nth-of-type(5n+2):hover {
+    --tag-color: #2563eb;
+    background: var(--tag-color);
+    color: white;
+}
+
+.post-tag:nth-of-type(5n+3):hover {
+    --tag-color: #16a34a;
+    background: var(--tag-color);
+    color: white;
+}
+
+.post-tag:nth-of-type(5n+4):hover {
+    --tag-color: #ca8a04;
+    background: var(--tag-color);
+    color: white;
+}
+
+.post-tag:nth-of-type(5n+5):hover {
+    --tag-color: #9333ea;
+    background: var(--tag-color);
+    color: white;
+}
+
+/* 桌面端特有的滚动条美化 */
+.deck-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.deck-container::-webkit-scrollbar-track {
+    background: var(--color-gray);
+}
+
+.deck-container::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 2px;
+}
