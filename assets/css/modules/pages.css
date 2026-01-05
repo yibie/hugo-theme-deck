@@ -597,6 +597,7 @@
     max-width: 650px;
     margin-bottom: 2.5rem;
     line-height: 1.6;
+    text-align: left;
 }
 
 .single-post--quote .quote-source {
