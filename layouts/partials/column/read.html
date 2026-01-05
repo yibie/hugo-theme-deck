@@ -7,7 +7,7 @@
             {{ if .Params.cover }}
             {{ $coverImage = .Params.cover | absURL }}
             {{ else if .Resources }}
-            {{ $images := .Resources.Match "**. {jpg,jpeg,png,gif}" }}
+            {{ $images := .Resources.Match "**.{jpg,jpeg,png,gif}" }}
             {{ if $images }}
             {{ $coverImage = (index $images 0).RelPermalink }}
             {{ end }}

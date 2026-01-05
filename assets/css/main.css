@@ -14,7 +14,4 @@
   border-radius: 4px;
 }
 
-/* 兼容性补丁：处理旧类名 */
-.post-card {
-  /* 旧类名映射到 deck-card 逻辑已在 cards.css 中通过并列选择器实现 */
-}
+/* 兼容性补丁：处理旧类名逻辑已并入 cards.css */
