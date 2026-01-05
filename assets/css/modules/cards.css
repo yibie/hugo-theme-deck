@@ -89,6 +89,7 @@
 }
 
 /* Stretched Link - 让整个卡片可点击 */
+/* Stretched Link - 让整个卡片可点击 */
 .deck-card__title a::after,
 .post-card h3 a::after,
 .now-card__title a::after,
@@ -103,10 +104,22 @@
     cursor: pointer;
 }
 
+/* 关键修复：强制标题不作为定位容器，确保覆盖层相对于卡片定位 */
+.deck-card__title,
+.post-card h3,
+.deck-card__title a,
+.post-card h3 a {
+    position: static !important;
+}
+
+/* 关键修复：让内容区域不拦截鼠标事件，允许点击穿透也不变文本光标 */
 .deck-card__summary,
-.post-card .summary {
+.post-card .summary,
+.deck-card__time,
+.post-card .deck-card__time {
     font-size: 0.875rem;
     opacity: 0.8;
+    pointer-events: none;
 }
 
 .deck-card__content {
