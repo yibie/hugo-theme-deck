@@ -12,6 +12,14 @@
     background: var(--color-bg);
     box-shadow: var(--shadow-sm);
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), background-color 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    /* 强制整卡为手型光标 */
+}
+
+/* 确保内部文本也不会变回文本光标 */
+.deck-card *,
+.post-card * {
+    cursor: pointer;
 }
 
 .deck-card:not(:last-child)::after,
