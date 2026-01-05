@@ -2,7 +2,7 @@
 <div class="deck-container">
     <div class="deck-scroll">
         {{ range .Site.Params.sections.columns }}
-        {{ partial "column/base.html" (dict "column" . "page" $) }}
+        {{ partial "column/base.html" . }}
         {{ end }}
     </div>
 </div>

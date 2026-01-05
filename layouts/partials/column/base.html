@@ -1,12 +1,12 @@
 <section class="deck-column">
     <header class="deck-column__header">
-        <h2>{{ .column.title }}</h2>
+        <h2>{{ .title }}</h2>
     </header>
     <div class="deck-column__content">
-        {{ $category := .column.category }}
+        {{ $category := .category }}
         {{ $pages := where site.RegularPages "Params.categories" "intersect" (slice $category) }}
 
-        {{ $styleName := replace .column.style "-column" "" }}
+        {{ $styleName := replace .style "-column" "" }}
         {{ $partialPath := printf "column/%s.html" $styleName }}
 
         {{ if templates.Exists (printf "partials/%s" $partialPath) }}
