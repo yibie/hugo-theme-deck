@@ -1,12 +1,45 @@
 /* assets/css/modules/animations.css */
+/* 背景环境光晕 - 为玻璃拟态提供支撑 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(var(--color-primary-rgb), 0.08),
+            rgba(219, 39, 119, 0.05),
+            rgba(34, 197, 94, 0.05),
+            transparent 70%);
+    z-index: -1;
+    animation: ambient-shift 30s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes ambient-shift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-5%, -5%) rotate(5deg);
+    }
+}
+
 /* 图片懒加载与通用过渡 */
 .lazy-image {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    filter: blur(10px);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+    transform: scale(1.02);
+    /* 微缩放防止白边 */
 }
 
 .lazy-image:not([src^="data:"]) {
     opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
 }
 
 .image-wrapper {

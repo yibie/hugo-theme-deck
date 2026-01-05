@@ -1,23 +1,29 @@
 /* assets/css/modules/cards.css */
 /* 3.5 卡片样式 */
+/* 3.5 卡片样式 */
 .deck-card,
 .post-card {
     padding: var(--spacing-unit);
-    margin: 0;
+    margin: 0 0 1.5rem 0;
+    /* 仅保留底部间距，且增大至 1.5rem */
     position: relative;
-    border-bottom: none;
+    border: none;
+    border-radius: 16px;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .deck-card:not(:last-child)::after,
 .post-card:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: var(--spacing-unit);
-    right: var(--spacing-unit);
-    height: 1px;
-    background: var(--color-border);
-    transition: background-color 0.3s ease;
+    display: none;
+}
+
+.deck-card:hover,
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    z-index: 2;
 }
 
 .deck-card__time,
@@ -88,7 +94,8 @@
     display: inline-block;
     font-size: 0.75rem;
     color: #333333;
-    background: rgba(0, 163, 255, 0.1);
+    background: rgba(0, 163, 255, 0.2);
+    /* 更深 */
     padding: 0.25rem 0.5rem;
     border-radius: 12px;
     margin-bottom: 0.5rem;
@@ -123,7 +130,7 @@
 
 .now-card {
     padding: var(--spacing-unit);
-    margin: 0;
+    margin: 0 0 1.5rem 0;
     transition: background-color 0.2s ease;
 }
 
@@ -187,19 +194,27 @@
 }
 
 .now-card--thought .now-card__content {
-    background: rgba(55, 92, 217, 0.1);
+    background: var(--glass-bg);
+    border-left: 4px solid #375CD9;
+    border-radius: 4px;
+    /* 左侧直角 */
 }
 
 .now-card--photo .now-card__content {
-    background: rgba(34, 197, 94, 0.1);
+    background: var(--glass-bg);
+    border-left: 4px solid #22C55E;
+    border-radius: 4px;
 }
 
 .now-card--activity .now-card__content {
-    background: rgba(255, 215, 0, 0.1);
+    background: var(--glass-bg);
+    border-left: 4px solid #FFD700;
+    border-radius: 4px;
 }
 
 .now-card:hover .now-card__content {
-    background-color: var(--color-now-hover);
+    background-color: var(--glass-bg);
+    box-shadow: var(--shadow-md);
 }
 
 .now-card:hover .now-card__title a {
@@ -207,7 +222,8 @@
 }
 
 .now-card:hover .now-card__tag {
-    background: var(--color-now-hover);
+    background: rgba(0, 0, 0, 0.05);
+    /* 保持原样 */
 }
 
 /* 5.3 Write 列 */
@@ -217,12 +233,13 @@
 
 .write-card {
     padding: 1.25rem var(--spacing-unit);
-    margin: 0;
+    margin: 0 0 1.5rem 0;
     transition: background-color 0.2s ease;
 }
 
 .write-card:hover {
-    background-color: var(--color-write-hover);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-hover);
 }
 
 .write-card__title {
@@ -266,12 +283,13 @@
 
 .quote-card {
     padding: var(--spacing-unit);
-    margin: 0;
+    margin: 0 0 1.5rem 0;
     transition: background-color 0.2s ease;
 }
 
 .quote-card:hover {
-    background-color: var(--color-quote-hover);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-hover);
 }
 
 .quote-card:hover .quote-card__content::before,

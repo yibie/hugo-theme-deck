@@ -6,10 +6,11 @@
   --color-gray: #E5E5E5;
   --color-primary: #375CD9;
   --color-border: rgba(0, 0, 0, 0.1);
-  --color-hover-bg: rgba(0, 0, 0, 0.02);
-  --color-quote-hover: rgba(34, 197, 94, 0.03);
-  --color-write-hover: rgba(219, 39, 119, 0.03);
-  --color-now-hover: rgba(255, 215, 0, 0.03);
+  --color-hover-bg: rgba(0, 0, 0, 0.04);
+  --color-quote-hover: rgba(34, 197, 94, 0.15);
+  /* 更显眼 */
+  --color-write-hover: rgba(219, 39, 119, 0.15);
+  --color-now-hover: rgba(255, 215, 0, 0.15);
 
   /* 布局尺寸 */
   --header-width: 300px;
@@ -31,6 +32,33 @@
   --content-margin-left-mobile: 0px;
 
   --color-primary-rgb: 55, 92, 217;
+
+  /* Project Deck v2 Modern Variables */
+  /* Typography - Modern Stack */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, serif;
+
+  /* Fluid Typography */
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+  --font-size-xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+
+  /* Glassmorphism & Depth */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  /* 更通透 */
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: 20px;
+
+  /* Soft Shadows - More diffuse for "floating" effect */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  /* 基础悬浮 */
+  --shadow-md: 0 8px 12px -2px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  /* Hover */
+  --shadow-lg: 0 16px 24px -4px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 32px -4px rgba(0, 0, 0, 0.15), 0 10px 16px -4px rgba(0, 0, 0, 0.1);
+
+  /* Animation */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 :root[data-theme="dark"] {
@@ -51,4 +79,12 @@
   --color-code-number: #d19a66;
   --color-code-function: #61afef;
   --color-primary-rgb: 92, 124, 255;
+
+  --glass-bg: rgba(26, 27, 30, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+
 }
