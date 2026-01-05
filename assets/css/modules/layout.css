@@ -240,6 +240,8 @@ body>footer .footer-content {
     overflow-x: auto;
     padding-bottom: 2rem;
     /* 预留阴影空间 */
+    height: calc(100vh - var(--content-padding-top));
+    /* 强制占满剩余高度，将滚动条推至底部 */
 }
 
 .deck-column {
@@ -358,6 +360,7 @@ body>footer .footer-content {
 
     .deck-scroll {
         min-height: calc(100vh - 3rem);
+        height: calc(100vh - 3rem);
     }
 
     body>footer {
