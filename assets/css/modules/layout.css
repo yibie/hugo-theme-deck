@@ -226,6 +226,7 @@ body>footer .footer-content {
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     /* 让 container 成为唯一的水平滚动容器 */
 }
 

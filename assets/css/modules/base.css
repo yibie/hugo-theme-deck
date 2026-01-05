@@ -8,8 +8,6 @@ body {
 
 body {
     overflow: hidden;
-    /* 防止双重滚动导致的跳动 */
-    -webkit-overflow-scrolling: touch;
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);
