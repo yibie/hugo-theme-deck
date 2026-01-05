@@ -13,6 +13,29 @@ A clean, column-based Hugo theme inspired by TweetDeck. Perfect for personal web
 - 🎭 Multiple column styles for content display
 - ⚡ Fast and lightweight
 
+## What's New in v2 (Major Upgrade)
+
+A comprehensive UI/UX overhaul focusing on modern aesthetics, performance, and interaction fluidity.
+
+### 🎨 Visual & UI Overhaul
+- **Glassmorphism Design**: Implemented a sophisticated frosted glass effect across the sidebar and cards, supported by a dynamic ambient background animation.
+- **Deep Glass Hover**: Cards feature a "Deep Glass" effect on hover, creating a premium depth perception with subtle color tinting based on column type.
+- **Typography Upgrade**: Migrated to a modern font stack (Inter, SF Pro) with fluid typography scaling for better readability on all devices.
+- **Dark Mode Perfected**: Fully optimized dark theme with refined color palettes, shadow depth, and contrast adjustments.
+- **Clean Sidebar**: Polished sidebar layout with better alignment, simplified footer (removed visual noise), and improved mobile responsiveness.
+- **Refined Layout**: Fixed column gaps (`2rem`), removed intrusive dividers, and ensured perfect alignment between headers and content.
+
+### ⚡ Interaction & Experience
+- **Physics-Based Animations**: All transitions now use spring physics (`cubic-bezier`) for a natural, snappy feel.
+- **Full Card Clickability**: Cards are now fully clickable (via `stretched-link`) with `pointer` cursor throughout, functioning as large, cohesive touch targets.
+- **Native Scrolling**: Restored system-native scrollbars for consistent OS feel, while ensuring smooth momentum scrolling (`-webkit-overflow-scrolling`) on iOS.
+- **Scroll Improvements**: Fixed "double scrollbar" issues, page jumping bugs, and background bleeding. The horizontal column scroll is now locked to the container, preventing body scroll conflicts.
+
+### 🛠 Technical Improvements
+- **CSS Modularization**: Refactored monolithic CSS into modular files (`base.css`, `layout.css`, `cards.css`, etc.) for better maintainability.
+- **CSS Variables**: Extensive use of CSS Custom Properties for theming, spacing, and animations, making customization easier.
+- **Clean Code**: Removed redundant styles, legacy hacks, and unused assets.
+
 ## Installation
 
 1. In your Hugo site directory, run:
