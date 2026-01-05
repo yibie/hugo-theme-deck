@@ -1,28 +1,12 @@
-{{ $categoryTerm := .category }}
-{{ $termPage := site.GetPage (printf "categories/%s" $categoryTerm) }}
-{{ if $termPage }}
-{{ $pagesInTerm := $termPage.Pages.ByDate.Reverse }}
-{{ range $pagesInTerm }}
+{{/* 引用列模板 */}}
+{{ range .pages }}
 <article class="deck-card quote-card">
     <a href="{{ .RelPermalink }}">
         <div class="quote-card__content">
             {{ .Title }}
         </div>
-
-        {{ with .Params.author }}
-        <div class="quote-card__author">
-            — {{ . }}
-        </div>
-        {{ end }}
-
-        {{ with .Params.source }}
-        <div class="quote-card__source">
-            {{ . }}
-        </div>
-        {{ end }}
+        {{ with .Params.author }}<div class="quote-card__author">— {{ . }}</div>{{ end }}
+        {{ with .Params.source }}<div class="quote-card__source">{{ . }}</div>{{ end }}
     </a>
 </article>
-{{ end }}
-{{ else }}
-<p>Category '{{ $categoryTerm }}' not found.</p>
 {{ end }}

@@ -1,54 +1,34 @@
-{{ $categoryTerm := .category }} {{/* Get category from context */}}
-{{ $termPage := site.GetPage (printf "categories/%s" $categoryTerm) }} {{/* Get taxonomy page */}}
-{{ if $termPage }}
-{{ $pagesInTerm := $termPage.Pages.ByDate.Reverse }} {{/* Get pages in category, reverse sorted by date */}}
+{{/* 阅读列模板 */}}
 <ul class="read-grid">
-    {{ range $pagesInTerm }}
+    {{ range .pages }}
     <li class="read-item">
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="read-link">
-            {{ $coverImage := "" }} {{/* Variable to hold the final image URL */}}
-
-            {{/* 1. 优先使用指定的封面图 */}}
+            {{ $coverImage := "" }}
             {{ if .Params.cover }}
             {{ $coverImage = .Params.cover | absURL }}
-            {{/* 2. 其次尝试使用文章资源中的第一张图片 (recursive match) */}}
             {{ else if .Resources }}
-            {{/* Use recursive match ** to find images in subdirectories */}}
             {{ $images := .Resources.Match "**. {jpg,jpeg,png,gif}" }}
             {{ if $images }}
-            {{ $coverImage = (first 1 $images).RelPermalink }}
+            {{ $coverImage = (index $images 0).RelPermalink }}
             {{ end }}
             {{ end }}
 
-            {{/* If we found an image from cover or resources, use it */}}
-            {{ if $coverImage }}
-            <img src="{{ $coverImage }}" alt="{{ .Title }}" class="read-cover">
-            {{/* 3. ONLY if no cover and no resource image, try content extraction (less reliable) */}}
-            {{ else }}
-            {{ $content := .Content }}
+            {{ if not $coverImage }}
             {{ $imgRegex := `<img[^>]+src="([^"]+)"` }}
-                {{ if findRE $imgRegex $content 1 }}
-                {{ $firstImage := index (findRE $imgRegex $content 1) 0 }}
-                {{ $imageSrc := replaceRE $imgRegex "$1" $firstImage }}
-                {{ $imageURL := $imageSrc }}
-                {{ if not (or (hasPrefix $imageSrc "/") (hasPrefix $imageSrc "http")) }}
-                {{ $pageDir := path.Dir .RelPermalink }}
-                {{ $imageURL = path.Join $pageDir $imageSrc | relURL }}
-                {{ else if hasPrefix $imageSrc "/" }}
-                {{ $imageURL = $imageSrc | relURL }}
+                {{ $matches := findRE $imgRegex .Content 1 }}
+                {{ if $matches }}
+                {{ $coverImage = replaceRE $imgRegex "$1" (index $matches 0) }}
                 {{ end }}
-                <img src="{{ $imageURL }}" alt="{{ .Title }}" class="read-cover">
-                {{/* 4. Final fallback: gradient */}}
+                {{ end }}
+
+                {{ if $coverImage }}
+                <img src="{{ $coverImage }}" alt="{{ .Title }}" class="read-cover">
                 {{ else }}
                 <div class="read-cover read-cover--gradient"></div>
                 {{ end }}
-                {{ end }} {{/* End of main image logic */}}
 
                 <span class="read-title">{{ .Title }}</span>
         </a>
     </li>
     {{ end }}
 </ul>
-{{ else }}
-<p>Category '{{ $categoryTerm }}' not found.</p> {{/* Optional: message if category page doesn't exist */}}
-{{ end }}

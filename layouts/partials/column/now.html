@@ -1,9 +1,5 @@
 {{/* Now 列模板 */}}
-{{ $categoryTerm := .category }} {{/* Get category from context */}}
-{{ $termPage := site.GetPage (printf "categories/%s" $categoryTerm) }} {{/* Get taxonomy page */}}
-{{ if $termPage }}
-{{ $pagesInTerm := $termPage.Pages.ByDate.Reverse }} {{/* Get pages in category, reverse sorted by date */}}
-{{ range $pagesInTerm }}
+{{ range .pages }}
 <article class="deck-card now-card{{ with .Params.type }} now-card--{{ . }}{{ end }}">
     <time class="now-card__time" datetime="{{ .Date.Format " 2006-01-02" }}">
         {{ .Date.Format "Jan 2" }}
@@ -16,12 +12,10 @@
 
         {{ if .Resources }}
         {{ $images := .Resources.Match "*.{jpg,jpeg,png,gif}" }}
-        {{ if $images }}
         {{ range first 1 $images }}
         <div class="now-card__image">
             <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
         </div>
-        {{ end }}
         {{ end }}
         {{ end }}
 
@@ -34,7 +28,4 @@
         {{ end }}
     </div>
 </article>
-{{ end }}
-{{ else }}
-<p>Category '{{ $categoryTerm }}' not found.</p> {{/* Optional: message if category page doesn't exist */}}
 {{ end }}

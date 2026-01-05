@@ -1,0 +1,26 @@
+{{/* layouts/partials/card_base.html */}}
+{{ $page := .page }}
+{{ $class := .class }}
+{{ $showSummary := .showSummary | default false }}
+{{ $summaryLimit := .summaryLimit | default 80 }}
+
+<article class="deck-card {{ $class }}">
+    <h3 class="{{ $class }}__title">
+        <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+    </h3>
+    {{ if $showSummary }}
+    {{ with $page.Summary }}
+    <div class="{{ $class }}__summary">
+        {{ $summary := . | plainify }}
+        {{ if gt (len $summary) $summaryLimit }}
+        {{ substr $summary 0 $summaryLimit }}...
+        {{ else }}
+        {{ $summary }}
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ if .extra }}
+    {{ .extra }}
+    {{ end }}
+</article>
