@@ -10,22 +10,37 @@
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
 
-        {{ if .Resources }}
+        {{ $coverImage := "" }}
+        {{ if .Params.cover }}
+        {{ $coverImage = .Params.cover | absURL }}
+        {{ else if .Resources }}
         {{ $images := .Resources.Match "*.{jpg,jpeg,png,gif}" }}
-        {{ range first 1 $images }}
-        <div class="now-card__image">
-            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
-        </div>
+        {{ if $images }}
+        {{ $coverImage = (index $images 0).RelPermalink }}
         {{ end }}
         {{ end }}
 
-        {{ with .Params.tags }}
-        <div class="now-card__tags">
-            {{ range . }}
-            <span class="now-card__tag">{{ . }}</span>
+        {{ if not $coverImage }}
+        {{ $imgRegex := `<img[^>]+src="([^"]+)"` }}
+            {{ $matches := findRE $imgRegex .Content 1 }}
+            {{ if $matches }}
+            {{ $coverImage = replaceRE $imgRegex "$1" (index $matches 0) }}
             {{ end }}
-        </div>
-        {{ end }}
+            {{ end }}
+
+            {{ if $coverImage }}
+            <div class="now-card__image">
+                <img src="{{ $coverImage }}" alt="{{ .Title }}">
+            </div>
+            {{ end }}
+
+            {{ with .Params.tags }}
+            <div class="now-card__tags">
+                {{ range . }}
+                <span class="now-card__tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
     </div>
 </article>
 {{ end }}
