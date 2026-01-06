@@ -233,11 +233,17 @@
     margin-top: 0.75rem;
     border-radius: 12px;
     overflow: hidden;
+    width: 100%;
+    /* Ensure it doesn't exceed parent */
+    max-width: 100%;
 }
 
 .now-card__image img {
     width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
     display: block;
+    object-fit: cover;
     transition: transform 0.2s ease;
 }
 
