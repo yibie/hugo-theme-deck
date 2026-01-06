@@ -24,6 +24,15 @@
     flex-direction: column;
     gap: 2rem;
     overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.header-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
 }
 
 .site-branding {
