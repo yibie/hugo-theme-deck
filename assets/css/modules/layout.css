@@ -241,7 +241,7 @@ body>footer .footer-content {
     display: flex;
     padding: 0;
     margin: 0;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: flex-start;
     /* scroll-snap-type: x mandatory; <- Not strictly needed if body scrolls, but good for alignment */
     /* overflow: visible; */
