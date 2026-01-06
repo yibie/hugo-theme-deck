@@ -8,7 +8,7 @@ body {
 
 body {
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);
