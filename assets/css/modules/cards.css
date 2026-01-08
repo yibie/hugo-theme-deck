@@ -2,10 +2,13 @@
 /* 3.5 卡片样式 */
 /* 3.5 卡片样式 */
 .deck-card,
-.post-card {
+.post-card,
+.write-card,
+.quote-card,
+.link-card,
+.now-card {
     padding: var(--spacing-unit);
     margin: 0 0 1.5rem 0;
-    /* 仅保留底部间距，且增大至 1.5rem */
     position: relative;
     border: none;
     border-radius: 16px;
@@ -13,7 +16,14 @@
     box-shadow: var(--shadow-sm);
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), background-color 0.4s ease, border-color 0.4s ease;
     cursor: pointer;
-    /* 强制整卡为手型光标 */
+
+    /* CRITICAL: Forces backgrounds to respect border-radius */
+    overflow: hidden;
+
+    /* Default accent color (transparent if not set) */
+    --card-accent: transparent;
+    --card-accent-rgb: 0, 0, 0;
+    /* Fallback */
 }
 
 /* 确保内部文本也不会变回文本光标 */
@@ -133,20 +143,35 @@
     opacity: 0.7;
 }
 
-/* 5.2 Now 列与卡片 */
-.now-column {
-    border-top: 3px solid #333333;
+.now-card {
+    --card-accent: #333333;
+    --card-accent-rgb: 51, 51, 51;
+    /* Wrapper should be transparent/simple to avoid double-box look default? */
+    /* But .deck-card sets background: var(--color-bg). 
+       We should probably keep it consistent or override it.
+       If we want the "rainbow" to NOT overflow the inner card, we must apply it to inner.
+    */
 }
 
-.now-column .column-header h2 {
-    color: #333333;
+.now-card:hover .now-card__content {
+    background: linear-gradient(135deg,
+            var(--color-gray) 0%,
+            /* Start from Gray, not White */
+            rgba(var(--card-accent-rgb), 0.08) 100%);
+    /* Add transition for this specifically if needed */
 }
 
-.now-column .post-card {
-    border-bottom: 1px solid #333333;
+/* Override generic hover for now-card wrapper to avoid double background */
+.now-card:hover {
+    background: var(--color-bg);
+    /* Keep it white/base */
 }
 
-.now-column a {
+.now-card .post-card {
+    border-bottom: 1px solid var(--card-accent);
+}
+
+.now-card a {
     color: var(--color-text);
 }
 
@@ -298,36 +323,12 @@
     /* 保持一致 */
 }
 
-/* Deep Glass Hover - Now (Blue Tint) */
-.now-card:hover .now-card__content {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(55, 92, 217, 0.08) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-color: rgba(55, 92, 217, 0.3);
-}
-
-:root[data-theme="dark"] .now-card:hover .now-card__content {
-    background: linear-gradient(135deg,
-            rgba(30, 32, 35, 0.9) 0%,
-            rgba(55, 92, 217, 0.15) 100%);
-    border-color: rgba(55, 92, 217, 0.4);
-}
-
-/* 5.3 Write 列 */
-.write-column {
-    border-top: 3px solid #333333;
-}
-
+/* 5.3 Write Card */
+.write-card.deck-card,
 .write-card {
+    --card-accent: #DB2777;
+    --card-accent-rgb: 219, 39, 119;
     padding: 1.25rem var(--spacing-unit);
-    margin: 0 0 1.5rem 0;
-}
-
-.write-card:hover {
-    background: var(--glass-bg);
-    box-shadow: var(--shadow-hover);
 }
 
 .write-card__title {
@@ -337,24 +338,45 @@
     line-height: 1.4;
 }
 
+/* Generic Hover Effect using Variables */
+.deck-card:hover,
+.post-card:hover,
+.write-card:hover,
+.quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    z-index: 2;
+    /* Dynamic background tint on hover */
+    background: linear-gradient(135deg,
+            var(--color-bg) 0%,
+            rgba(var(--card-accent-rgb), 0.08) 100%);
+}
+
+/* Specific handling for now-card hover state (wrapper only affects shadow/transform) */
+.now-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    z-index: 2;
+    /* Background handled on inner element */
+}
+
+.deck-card:hover .deck-card__title a,
 .write-card:hover .write-card__title a {
     opacity: 0.7;
 }
 
-/* Deep Glass Hover - Write (Pink Tint) */
-.write-card:hover {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(219, 39, 119, 0.08) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-hover);
+/* Now card title hover effect links to logic above */
+.now-card:hover .now-card__title a {
+    opacity: 0.7;
 }
 
-:root[data-theme="dark"] .write-card:hover {
+:root[data-theme="dark"] .deck-card:hover,
+:root[data-theme="dark"] .write-card:hover,
+:root[data-theme="dark"] .quote-card:hover,
+:root[data-theme="dark"] .now-card:hover {
     background: linear-gradient(135deg,
-            rgba(30, 32, 35, 0.9) 0%,
-            rgba(219, 39, 119, 0.15) 100%);
+            var(--color-bg) 0%,
+            rgba(var(--card-accent-rgb), 0.15) 100%);
 }
 
 .write-card__summary {
@@ -368,52 +390,26 @@
     border-bottom: none;
 }
 
-/* 5.4 Quote 列 */
-.quote-column {
-    border-top: 3px solid #22C55E;
-}
-
-.quote-column .column-header h2 {
-    color: #22C55E;
-}
-
-.quote-column .post-card {
-    border-bottom: 1px solid #22C55E;
-}
-
-.quote-column a {
-    color: var(--color-text);
-}
-
+/* 5.4 Quote Card */
+.quote-card.deck-card,
 .quote-card {
+    --card-accent: #22C55E;
+    --card-accent-rgb: 34, 197, 94;
     padding: var(--spacing-unit);
-    margin: 0 0 1.5rem 0;
 }
 
-.quote-card:hover {
-    background: var(--glass-bg);
-    box-shadow: var(--shadow-hover);
+.quote-card .post-card {
+    border-bottom: 1px solid var(--card-accent);
 }
 
-/* Deep Glass Hover - Quote (Green Tint) */
-.quote-card:hover {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(34, 197, 94, 0.08) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-:root[data-theme="dark"] .quote-card:hover {
-    background: linear-gradient(135deg,
-            rgba(30, 32, 35, 0.9) 0%,
-            rgba(34, 197, 94, 0.15) 100%);
+.quote-card a {
+    color: var(--color-text);
 }
 
 .quote-card:hover .quote-card__content::before,
 .quote-card:hover .quote-card__content::after {
     opacity: 0.3;
-    color: #22C55E;
+    color: var(--card-accent);
 }
 
 .quote-card__content {
@@ -471,37 +467,18 @@
     display: block;
 }
 
-/* 5.5 Read 列 */
+/* 5.5 Read Card */
 .read-column {
-    border-top: 3px solid #FFD700;
-}
-
-.read-column .column-header h2 {
-    color: #FFD700;
+    /* Read items are special, they don't use .deck-card usually? Or do they? */
+    --card-accent: #FFD700;
 }
 
 .read-column .post-card {
-    border-bottom: 1px solid #FFD700;
+    border-bottom: 1px solid var(--card-accent);
 }
 
 .read-column a {
     color: var(--color-text);
-}
-
-/* Deep Glass Hover - Read (Yellow/Amber Tint) */
-.read-item:hover::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top,
-            rgba(180, 83, 9, 0.2) 0%,
-            transparent 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.read-card:last-child {
-    border-bottom: none;
 }
 
 .read-card__title {
@@ -583,4 +560,159 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, var(--color-gray) 0%, var(--color-bg) 100%);
+}
+
+/* 5.6 Link Card */
+.link-column {
+    --card-accent: #8B5CF6;
+}
+
+.link-column .post-card {
+    border-bottom: 1px solid var(--card-accent);
+}
+
+.link-column a {
+    color: var(--color-text);
+}
+
+/* Link Card Styles */
+.link-card {
+    --card-accent: #8B5CF6;
+    --card-accent-rgb: 139, 92, 246;
+    padding: var(--spacing-unit);
+}
+
+.link-preview {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout for desktop usually, but card shows... wait, let's flex */
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none !important;
+    /* Override global a link styles */
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    background: var(--color-bg-secondary, #f8f9fa);
+    position: relative;
+    /* Context */
+}
+
+/* Dark mode adjustment if variable not reliable */
+:root[data-theme="dark"] .link-preview {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.link-preview:hover {
+    border-color: #8B5CF6;
+    background: var(--glass-bg);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.link-preview__content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    /* Fix flex overflow */
+}
+
+.link-preview__title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.link-preview__desc {
+    font-size: 0.875rem;
+    color: var(--color-text);
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Standard property */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.link-preview__domain {
+    font-size: 0.75rem;
+    color: var(--color-text);
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.link-preview__image {
+    width: 120px;
+    min-height: 120px;
+    background: #e5e7eb;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.link-preview__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+
+/* 移动端适配：变为垂直堆叠 */
+@media (max-width: 480px) {
+    .link-preview {
+        flex-direction: column-reverse;
+        /* 图片在上面？或者下面？通常图片在上面。 let's try standard */
+        flex-direction: column;
+    }
+
+    .link-preview__image {
+        width: 100%;
+        height: 160px;
+    }
+}
+
+.link-card__commentary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    word-break: break-word;
+}
+
+.link-card__internal-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.link-card__footer {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    opacity: 0.6;
+    font-size: 0.875rem;
+}
+
+/* Inner Page Specifics */
+.single-link .link-preview--large {
+    max-width: 100%;
+    border-width: 2px;
+    margin-bottom: 2rem;
+    font-size: 1.1em;
+}
+
+.single-link .link-preview--large .link-preview__title {
+    font-size: 1.25rem;
 }
