@@ -60,8 +60,8 @@
   --glass-blur: 20px;
 
   /* Soft Shadows - More diffuse for "floating" effect */
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  /* 基础悬浮 */
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  /* 增强轮廓 */
   --shadow-md: 0 8px 12px -2px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
   /* Hover */
   --shadow-lg: 0 16px 24px -4px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.08);
