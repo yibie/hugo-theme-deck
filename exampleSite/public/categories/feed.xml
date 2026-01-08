@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - Hugo Theme Deck</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Hugo Theme Deck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    
+    <lastBuildDate>Tue, 06 Jan 2026 14:30:00 +0800</lastBuildDate>
+    
+    <atom:link href="http://localhost:1313/categories/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Link</title>
+      <link>http://localhost:1313/categories/link/</link>
+      <pubDate>Tue, 06 Jan 2026 14:30:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Now</title>
+      <link>http://localhost:1313/categories/now/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/now/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quotes</title>
+      <link>http://localhost:1313/categories/quotes/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/quotes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Read</title>
+      <link>http://localhost:1313/categories/read/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/read/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Til</title>
+      <link>http://localhost:1313/categories/til/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Write</title>
+      <link>http://localhost:1313/categories/write/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/write/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss> 

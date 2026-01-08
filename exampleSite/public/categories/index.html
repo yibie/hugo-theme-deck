@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Categories - Hugo Theme Deck</title>
+<meta name="description"
+    content="">
+
+
+<meta property="og:title"
+    content="Categories - Hugo Theme Deck">
+<meta property="og:description"
+    content="">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/categories/">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+    content="Categories - Hugo Theme Deck">
+<meta name="twitter:description"
+    content="">
+
+
+
+<link rel="canonical" href="http://localhost:1313/categories/">
+
+
+      <script src="/js/main.js"></script>
+
+
+
+<script>
+    
+    (function () {
+        const theme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+
+
+
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/feed.xml" title="Hugo Theme Deck" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.min.c6bccc5635b127e1627d2be308a29ab3e119ef831e7c53057406814dc3f247d1.css" integrity="sha256-xrzMVjWxJ&#43;FifSvjCKKas&#43;EZ74MefFMFdAaBTcPyR9E=">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-content">
+        
+        <div class="site-branding">
+            <h1 class="site-title">
+                <a href="/">Hugo Theme Deck</a>
+            </h1>
+            
+            <p class="site-subtitle">A clean and modern Hugo theme</p>
+            
+        </div>
+
+        
+        
+        <div class="site-bio">
+            <div class="bio-content">This is a demo site for the Hugo Theme Deck.
+You can use <strong>markdown</strong> formatting in your bio.</div>
+        </div>
+        
+
+        
+        <nav class="site-nav">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/posts">Posts</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/tags">Tags</a>
+                </li>
+                
+                
+                <li class="menu-item">
+                    <a href="/feed.xml">Rss</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        
+        <div class="theme-toggle">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle__icon">🌓</span>
+            </button>
+        </div>
+
+        
+        <div class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="copyright">© 2026 Demo User</p>
+                    <p class="powered-by">Powered by <a href="https://gohugo.io" target="_blank">Hugo</a></p>
+                    <p class="theme-info">Theme <a href="https://github.com/yibie/hugo-theme-deck"
+                            target="_blank">Deck</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+
+        
+        themeToggle.addEventListener('click', function () {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        prefersDark.addListener((e) => {
+            if (!localStorage.getItem('theme')) {
+                const systemTheme = e.matches ? 'dark' : 'light';
+                html.setAttribute('data-theme', systemTheme);
+                localStorage.setItem('theme', systemTheme);
+            }
+        });
+    });
+</script>
+  <main>
+    
+<div class="list-container">
+    <header class="list-header">
+        <h1 class="list-title">Categories</h1>
+        
+    </header>
+
+    <div class="taxonomy-list">
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/link/">Link</a>
+            </h2>
+            
+        </article>
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/now/">Now</a>
+            </h2>
+            
+        </article>
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/quotes/">Quotes</a>
+            </h2>
+            
+        </article>
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/read/">Read</a>
+            </h2>
+            
+        </article>
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/til/">Til</a>
+            </h2>
+            
+        </article>
+        
+        <article class="taxonomy-card">
+            <h2 class="taxonomy-card__title">
+                <a href="/categories/write/">Write</a>
+            </h2>
+            
+        </article>
+        
+    </div>
+</div>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deck - Hugo Theme Deck</title>
+    <link>http://localhost:1313/tags/deck/</link>
+    <description>Recent content in Deck on Hugo Theme Deck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    
+    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="http://localhost:1313/tags/deck/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to Hugo Theme Deck</title>
+      <link>http://localhost:1313/posts/hello/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello/</guid>
+      <description>&lt;p&gt;Welcome to the Hugo Theme Deck! This theme is designed to be clean, modern, and easy to use.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple content types (Write, Quote, Now, Read, TIL)&lt;/li&gt;
+&lt;li&gt;Dark mode support&lt;/li&gt;
+&lt;li&gt;Responsive design&lt;/li&gt;
+&lt;li&gt;RSS feed&lt;/li&gt;
+&lt;li&gt;SEO optimized&lt;/li&gt;
+&lt;li&gt;Image lazy loading&lt;/li&gt;
+&lt;li&gt;Tag support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install Hugo&lt;/li&gt;
+&lt;li&gt;Create a new site&lt;/li&gt;
+&lt;li&gt;Add this theme&lt;/li&gt;
+&lt;li&gt;Configure your site&lt;/li&gt;
+&lt;li&gt;Start writing!&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss> 

@@ -23,7 +23,6 @@ A comprehensive UI/UX overhaul focusing on modern aesthetics, performance, and i
 - **Typography Upgrade**: Migrated to a modern font stack (Inter, SF Pro) with fluid typography scaling for better readability on all devices.
 - **Dark Mode Perfected**: Fully optimized dark theme with refined color palettes, shadow depth, and contrast adjustments.
 - **Clean Sidebar**: Polished sidebar layout with better alignment, simplified footer (removed visual noise), and improved mobile responsiveness.
-- **Refined Layout**: Fixed column gaps (`2rem`), removed intrusive dividers, and ensured perfect alignment between headers and content.
 - **New Link Column**: Added a specialized `link` column style for sharing curated links with rich previews (title, domain, thumbnail) and commentary.
 
 ### ⚡ Interaction & Experience

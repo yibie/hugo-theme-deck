@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Link - Hugo Theme Deck</title>
+    <link>http://localhost:1313/categories/link/</link>
+    <description>Recent content in Link on Hugo Theme Deck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    
+    <lastBuildDate>Tue, 06 Jan 2026 14:30:00 +0800</lastBuildDate>
+    
+    <atom:link href="http://localhost:1313/categories/link/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Steve Yegge&#39;s Vibe Coding Manifesto</title>
+      <link>http://localhost:1313/posts/steve-yegge-vibe-coding/</link>
+      <pubDate>Tue, 06 Jan 2026 14:30:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/steve-yegge-vibe-coding/</guid>
+      <description>&lt;p&gt;This is one of the most insightful discussions on the future of coding I&amp;rsquo;ve heard recently. Steve Yegge argues that we are moving away from traditional IDEs towards a &amp;ldquo;Vibe Coding&amp;rdquo; era where AI agents handle the bulk of implementation.&lt;/p&gt;
+&lt;p&gt;He critiques current tools for being &amp;ldquo;too safe&amp;rdquo; and suggests we need to embrace a more chaotic, high-level directive approach. It&amp;rsquo;s not just about autocomplete; it&amp;rsquo;s about architectural delegation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;The vibes are off.&amp;rdquo; — Steve Yegge&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss> 
