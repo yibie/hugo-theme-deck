@@ -24,6 +24,7 @@ A comprehensive UI/UX overhaul focusing on modern aesthetics, performance, and i
 - **Dark Mode Perfected**: Fully optimized dark theme with refined color palettes, shadow depth, and contrast adjustments.
 - **Clean Sidebar**: Polished sidebar layout with better alignment, simplified footer (removed visual noise), and improved mobile responsiveness.
 - **Refined Layout**: Fixed column gaps (`2rem`), removed intrusive dividers, and ensured perfect alignment between headers and content.
+- **New Link Column**: Added a specialized `link` column style for sharing curated links with rich previews (title, domain, thumbnail) and commentary.
 
 ### ⚡ Interaction & Experience
 - **Physics-Based Animations**: All transitions now use spring physics (`cubic-bezier`) for a natural, snappy feel.
@@ -88,6 +89,7 @@ theme = 'hugo-theme-deck' # Your theme
       { id = "write", title = "Writing", category = "write", style = "write" },
       { id = "quote", title = "Quotes", category = "quotes", style = "quote" },
       { id = "read", title = "Reading", category = "read", style = "read" },
+      { id = "link", title = "Links", category = "link", style = "link" },
       # Example of reusing a style
       { id = "til", title = "TIL", category = "til", style = "write-column" }  # TIL column is also use write-column style
     ]
@@ -145,6 +147,12 @@ The theme provides different styles for displaying post in different columns. Ea
   - First image in content → Grid item cover
   - Content → Not displayed
   - Date → Not displayed
+
+- `link-column`:
+  - Rich Preview Card with title, domain, description, and optional image
+  - Clicking the preview card opens the external link directly
+  - Post content acts as commentary below the card
+  - Date → Card footer
 
 This decoupled design allows:
 - Same content category can be displayed in different styles

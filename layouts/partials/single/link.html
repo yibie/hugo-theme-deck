@@ -1,0 +1,50 @@
+<div class="single-main single-link">
+    <article class="single-post">
+        <div class="link-post-header">
+            {{/* Link Preview Card (The "Box") - Larger Version */}}
+            {{ $link := .Params.link | default .Params.externalUrl }}
+            <a href="{{ $link }}" target="_blank" rel="noopener noreferrer" class="link-preview link-preview--large">
+                <div class="link-preview__content">
+                    <div class="link-preview__title">{{ .Params.link_title | default .Title }}</div>
+                    <div class="link-preview__desc">{{ .Params.link_desc | default .Description | default .Summary }}
+                    </div>
+                    <div class="link-preview__domain">
+                        {{ $domain := .Params.link_domain }}
+                        {{ if not $domain }}
+                        {{ $u := urls.Parse $link }}
+                        {{ $domain = $u.Host }}
+                        {{ end }}
+                        {{ $domain }}
+                    </div>
+                </div>
+                {{ if .Params.link_image }}
+                <div class="link-preview__image">
+                    <img src="{{ .Params.link_image | absURL }}" alt="{{ .Title }}">
+                </div>
+                {{ end }}
+            </a>
+        </div>
+
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+
+        <footer class="post-footer">
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ with .Params.categories }}
+                <span class="meta-separator">•</span>
+                {{ range . }}<span class="category">{{ . }}</span>{{ end }}
+                {{ end }}
+            </div>
+
+            {{ with .Params.tags }}
+            <div class="post-tags">
+                {{ range . }}
+                <a href="/tags/{{ . | urlize }}" class="post-tag">#{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </footer>
+    </article>
+</div>

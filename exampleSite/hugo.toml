@@ -18,6 +18,7 @@ You can use **markdown** formatting in your bio.
       { id = "write", title = "Writing", category = "write", style = "write-column" },
       { id = "quote", title = "Quotes", category = "quotes", style = "quote-column" },
       { id = "read", title = "Reading", category = "read", style = "read-column" },
+      { id = "link", title = "Links", category = "link", style = "link-column" },
       { id = "til", title = "TIL", category = "til", style = "write-column" }
     ]
 

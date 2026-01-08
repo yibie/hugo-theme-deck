@@ -1,0 +1,40 @@
+{{/* 链接列模板 */}}
+{{ range .pages }}
+<article class="deck-card link-card">
+    {{/* 1. Link Preview Card (The "Box") */}}
+    {{ $link := .Params.link | default .Params.externalUrl }}
+    <a href="{{ $link }}" target="_blank" rel="noopener noreferrer" class="link-preview">
+        <div class="link-preview__content">
+            <div class="link-preview__title">{{ .Params.link_title | default .Title }}</div>
+            <div class="link-preview__desc">{{ .Params.link_desc | default .Description | default .Summary | truncate
+                120 }}</div>
+            <div class="link-preview__domain">
+                {{/* Try to extract domain, or just show link, or manual param */}}
+                {{ .Params.link_domain | default (replaceRE "^https?://([^/]+).*" "$1" $link) }}
+            </div>
+        </div>
+        {{ if .Params.link_image }}
+        <div class="link-preview__image">
+            <img src="{{ .Params.link_image | absURL }}" alt="{{ .Title }}">
+        </div>
+        {{ end }}
+    </a>
+
+    {{/* 2. User Commentary */}}
+    <div class="link-card__commentary">
+        <a href="{{ .RelPermalink }}" class="link-card__internal-link">
+            {{ $summary := .Summary | plainify }}
+            {{ if gt (len $summary) 150 }}
+            {{ substr $summary 0 150 }}...
+            {{ else }}
+            {{ $summary }}
+            {{ end }}
+        </a>
+    </div>
+
+    {{/* 3. Footer */}}
+    <footer class="link-card__footer">
+        <time class="deck-card__time">{{ .Date.Format "2006-01-02" }}</time>
+    </footer>
+</article>
+{{ end }}
