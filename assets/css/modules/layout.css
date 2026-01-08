@@ -179,9 +179,15 @@
 /* 3.2 Main Content */
 main {
     margin-left: var(--header-width);
+    min-width: calc(100vw - var(--header-width));
+    /* MINIMUM width, can grow with content */
+    width: max-content;
+    /* Expand to fit all columns */
     min-height: 100vh;
     position: relative;
     overflow: visible;
+    background: var(--color-bg);
+    /* Ensure background covers the entire expanded area */
     /* 防止 main 产生额外滚动条 */
 }
 
@@ -241,16 +247,12 @@ body>footer .footer-content {
     display: flex;
     padding: 0;
     margin: 0;
-    gap: 1rem;
+    gap: 2.5rem;
     justify-content: flex-start;
-    /* scroll-snap-type: x mandatory; <- Not strictly needed if body scrolls, but good for alignment */
-    /* overflow: visible; */
     padding-bottom: 2rem;
     height: auto;
-    /* Allow height to grow */
     width: max-content;
-    /* Force width to fit all columns */
-    background: var(--color-bg);
+    /* background removed - let deck-container handle it */
 }
 
 
@@ -273,27 +275,46 @@ body>footer .footer-content {
     border-right: none !important;
 }
 
+/* 不同类型列的头部样式变体 - 使用 CSS 变量去重 */
+.now-column {
+    --column-accent: #333333;
+}
+
+.write-column {
+    --column-accent: #DB2777;
+}
+
+.quote-column {
+    --column-accent: #22C55E;
+}
+
+.read-column {
+    --column-accent: #FFD700;
+}
+
+.link-column {
+    --column-accent: #8B5CF6;
+}
+
 .deck-column__header {
     flex-shrink: 0;
-    padding: 0.75rem 0;
-    /* 移除左右内边距 */
-    margin: 0 1.25rem;
-    /* 增加左右外边距以对齐卡片 */
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    /* Consolidate border logic */
     border-bottom: none;
+    border-top: 3px solid var(--column-accent, transparent);
+}
+
+.deck-column__header h2 {
+    color: var(--column-accent, inherit);
 }
 
 .deck-column__content {
     padding: 1rem 1.25rem;
     flex: 1;
-    /* Remove internal scroll */
-    /* overflow-y: auto; */
-    /* overflow-x: hidden; */
     width: 100%;
     overflow: visible;
 }
-
-/* 不同类型列的头部样式变体 */
-/* 不同类型列的头部样式变体 - 已移除边框颜色 */
 
 /* 响应式布局调整 - 移动端 */
 @media (max-width: 768px) {
