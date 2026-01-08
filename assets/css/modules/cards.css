@@ -489,7 +489,8 @@
 }
 
 .read-column .deck-column__content {
-    padding: 0 !important;
+    padding: 0 1.25rem;
+    /* Match horizontal padding with other columns */
     overflow-y: auto;
     max-height: 100%;
 }
