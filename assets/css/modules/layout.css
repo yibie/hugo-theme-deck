@@ -193,7 +193,7 @@ main {
 
 /* 3.3 Single Post Layout */
 .single-main {
-    padding: var(--content-padding-top) var(--content-side-padding);
+    padding: var(--content-padding-top) 2rem;
     max-width: var(--single-content-width);
     margin: 0 auto;
     min-height: calc(100vh - var(--content-padding-top));
@@ -371,7 +371,7 @@ body>footer .footer-content {
 
     .single-main {
         margin-top: 3rem;
-        padding: var(--spacing-unit) var(--content-side-padding);
+        padding: var(--spacing-unit) 2rem;
     }
 
     .post-header {
