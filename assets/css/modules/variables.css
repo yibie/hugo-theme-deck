@@ -30,6 +30,7 @@
   --content-padding-top: 2rem;
   --content-side-padding: max(1rem, calc((100vw - var(--max-content-width)) / 2));
   --spacing-unit: 1rem;
+  --single-content-width: 800px;
 
   /* 响应式断点 */
   --breakpoint-mobile: 768px;

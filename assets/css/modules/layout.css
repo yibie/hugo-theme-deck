@@ -194,7 +194,7 @@ main {
 /* 3.3 Single Post Layout */
 .single-main {
     padding: var(--content-padding-top) var(--content-side-padding);
-    max-width: 680px;
+    max-width: var(--single-content-width);
     margin: 0 auto;
     min-height: calc(100vh - var(--content-padding-top));
     position: relative;
