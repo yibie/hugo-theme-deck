@@ -9,9 +9,11 @@
             {{ if or .Params.author .Params.source }}
             <div class="quote-source">
                 —
-                {{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
+                {{ with .Params.author }}<span class="author">{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{
+                    . }}{{ end }}</span>{{ end }}
                 {{ if and .Params.author .Params.source }}<span class="separator">, </span>{{ end }}
-                {{ with .Params.source }}<cite class="source">{{ . }}</cite>{{ end }}
+                {{ with .Params.source }}<cite class="source">{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{
+                    . }}{{ end }}</cite>{{ end }}
             </div>
             {{ end }}
 
