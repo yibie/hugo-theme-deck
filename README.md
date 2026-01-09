@@ -117,10 +117,48 @@ All content posts share the same basic structure:
 ---
 title: "Post Title"
 date: 2024-03-14
-categories: ["write"]  # Determines which column the post appears in, must be one of the column names in the config, otherwise it will not be displayed
-source: James          # Quote source (optional), will be displayed in the quote column as quote source 
+categories: ["write"]  # Determines which column the post appears in
 ---
 Post content goes here...
+```
+
+#### Quote Post
+For posts displayed in the `quote-column`, the title acts as the quote text itself:
+
+```yaml
+---
+title: "The best way to predict the future is to invent it."
+date: 2024-03-14
+categories: ["quotes"]
+author: "Alan Kay"       # Optional: who said it
+source: "Computer Science Conference, 1971"  # Optional: where it's from
+---
+```
+> **Note**: The post content is not displayed in `quote-column`. Only the title, author, and source are shown.
+
+#### Link Post
+For posts displayed in the `link-column`, you need to provide external link metadata:
+
+```yaml
+---
+title: "My commentary title"  # Fallback if link_title is not set
+date: 2024-03-14
+categories: ["link"]
+type: "link"  # Required for the dedicated single page layout
+
+# Link metadata (required)
+link: "https://example.com/article"
+
+# Optional overrides for the preview card
+link_title: "The Article Title"
+link_desc: "A short description of the linked content..."
+link_domain: "example.com"
+link_image: "/images/preview.jpg"  # Thumbnail for the card
+---
+
+Your commentary goes here. This Markdown content will be shown
+below the link preview card on the homepage (truncated) and 
+in full on the single page.
 ```
 
 ### Column Styles
