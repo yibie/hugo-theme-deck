@@ -276,22 +276,27 @@ body>footer .footer-content {
 }
 
 /* 不同类型列的头部样式变体 - 使用 CSS 变量去重 */
+.now,
 .now-column {
     --column-accent: #333333;
 }
 
+.write,
 .write-column {
     --column-accent: #DB2777;
 }
 
+.quote,
 .quote-column {
     --column-accent: #22C55E;
 }
 
+.read,
 .read-column {
     --column-accent: #FFD700;
 }
 
+.link,
 .link-column {
     --column-accent: #8B5CF6;
 }
