@@ -621,3 +621,16 @@
     margin: 0;
     display: inline-flex;
 }
+
+/* Quote context area - reset blockquote styles for nested quotes in content */
+.single-post--quote .quote-context blockquote {
+    font-family: Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--color-gray);
+    font-style: italic;
+    color: var(--color-text);
+    opacity: 0.8;
+}
